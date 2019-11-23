@@ -1,1 +1,1 @@
-# Gui for accessing a data base.
+# GUI for accessing a data base.
