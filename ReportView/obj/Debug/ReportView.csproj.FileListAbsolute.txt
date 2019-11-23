@@ -1,0 +1,16 @@
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\ReportView.exe.config
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\ReportView.exe
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\ReportView.pdb
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.csprojAssemblyReference.cache
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\MainWindow.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\App.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView_MarkupCompile.cache
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView_MarkupCompile.lref
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\MainWindow.baml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.g.resources
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.Properties.Resources.resources
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.csproj.GenerateResource.cache
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.exe
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.pdb
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\HomePage.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\HomePage.baml
