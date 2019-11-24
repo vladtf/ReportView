@@ -14,3 +14,9 @@ C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportVie
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.pdb
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\HomePage.g.cs
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\HomePage.baml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\PersonView.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\PersonView.baml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Dapper.dll
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Dapper.xml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.csproj.CopyComplete
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ResourceDictionary.baml

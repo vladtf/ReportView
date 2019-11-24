@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ReportView
 {
@@ -20,19 +8,30 @@ namespace ReportView
     /// </summary>
     public partial class MainWindow : Window
     {
-        HomePage HomePage = new HomePage();
+        private HomePage HomePage = new HomePage();
+
         public MainWindow()
         {
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+
             InitializeComponent();
 
             HomePage.Height = pageViewer.Height;
             pageViewer.Content = HomePage;
+
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (e.ClickCount == 2)
+                if (this.WindowState == WindowState.Normal)
+                    this.WindowState = WindowState.Maximized;
+                else
+                    this.WindowState = WindowState.Normal;
             if (e.ChangedButton == MouseButton.Left)
+            {
                 this.DragMove();
+            }
         }
 
         private void Close_Button_Click(object sender, RoutedEventArgs e)
@@ -53,11 +52,10 @@ namespace ReportView
                 minimizeButton.Content = "🗗";
             }
             else
-            { 
+            {
                 this.WindowState = WindowState.Normal;
                 minimizeButton.Content = "🗖";
             }
         }
-
     }
 }

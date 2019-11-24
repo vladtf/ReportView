@@ -15,14 +15,39 @@ using System.Windows.Shapes;
 
 namespace ReportView
 {
-    /// <summary>
-    /// Interaction logic for HomePage.xaml
-    /// </summary>
+    
     public partial class HomePage : Page
     {
+        private List<Person> people = new List<Person>();
+        private List<PersonView> peopleView = new List<PersonView>();
+
         public HomePage()
         {
             InitializeComponent();
+
+            Search_Action();
+
+            homePageStackPanel.Children.Clear();
+
+            foreach (PersonView personView in peopleView)
+            {
+                homePageStackPanel.Children.Add(personView);
+            }
+
+        }
+
+        private void Search_Action()
+        {
+            DataAcces db = new DataAcces();
+
+            people = db.GetPeople();
+
+            foreach(Person person in people)
+            {
+                PersonView personView = new PersonView(person);
+                peopleView.Add(personView);
+            }
+
         }
     }
 }

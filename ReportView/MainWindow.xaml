@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="Report View" Height="550" Width="800" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
-    <Grid MouseDown="Grid_MouseDown">
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Resources/background.jpg" Opacity="0.9" />
         </Grid.Background>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Border Background="LightBlue" Opacity="0.6" />
+        <Border Background="LightBlue" Opacity="0.6" MouseDown="Grid_MouseDown" />
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -38,7 +38,11 @@
             <StackPanel Orientation="Horizontal" Grid.Column="1">
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Grid.Column="2">
+            <StackPanel Orientation="Horizontal" Grid.Column="2" >
+                <StackPanel Orientation="Horizontal" Height="50">
+                    <Label Content="●" FontSize="20" Foreground="Green" Height="50" VerticalContentAlignment="Center" Name="connectionStatus"/>
+                    <Label VerticalContentAlignment="Center" Height="50" Foreground="White">Connection</Label>
+                </StackPanel>
                 <Button Width="50" Height="50" Content="⚙" Background="Transparent" BorderThickness="0" Foreground="White"/>
                 <Button Width="50" Height="50" Content="🗕" Background="Transparent" BorderThickness="0" Foreground="White" Click="Minimize_Button_Click"/>
                 <Button Width="50" Height="50" Content="🗖" Background="Transparent" BorderThickness="0" Foreground="White" Click="Maximize_Button_Click" Name="minimizeButton"/>
@@ -52,7 +56,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Border Background="LightBlue" Opacity="0.2"/>
+            <Border Background="LightBlue" Opacity="0.4"/>
 
             <Frame Name="pageViewer" Grid.Column="1"/>
 
