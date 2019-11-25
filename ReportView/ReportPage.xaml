@@ -36,14 +36,14 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.5" Background="LightBlue" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.4" Background="LightBlue" Grid.ColumnSpan="2" Grid.RowSpan="2" />
 
             <Viewbox Grid.ColumnSpan="2">
-                <TextBlock Text="1" Foreground="White" Margin="5" Name="idTextBlock" />
+                <TextBlock Text="1" Foreground="LightBlue" Margin="5" Name="idTextBlock" />
             </Viewbox>
             
             <Viewbox Grid.Row="1">
-                <TextBlock Text="id" Foreground="White" Margin="5" TextWrapping="Wrap" OpacityMask="Black" />
+                <TextBlock Text="id" Foreground="LightBlue" Margin="5" TextWrapping="Wrap" OpacityMask="Black" />
             </Viewbox>
         </Grid>
 
@@ -58,14 +58,14 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.5" Background="LightYellow" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.4" Background="LightYellow" Grid.ColumnSpan="2" Grid.RowSpan="2" />
             
             <Viewbox Grid.ColumnSpan="2">
-                <TextBlock Text="email@home.com" Foreground="White" Margin="5" Name="emailTextBlock" />
+                <TextBlock Text="email@home.com" Foreground="LightYellow" Margin="5" Name="emailTextBlock" />
             </Viewbox>
 
             <Viewbox Grid.Row="1" Grid.Column="1">
-                <TextBlock Text="email" Foreground="White" Margin="5"/>
+                <TextBlock Text="email" Foreground="LightYellow" Margin="5"/>
             </Viewbox>
         </Grid>
 
@@ -80,14 +80,14 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.5" Background="LightCoral" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.4" Background="LightCoral" Grid.ColumnSpan="2" Grid.RowSpan="2" />
 
             <Viewbox Grid.ColumnSpan="2" Grid.Row="1">
-                <TextBlock Text="12/12/2000" Foreground="White" Margin="5" Name="dateTextBlock" />
+                <TextBlock Text="12/12/2000" Foreground="LightCoral" Margin="5" Name="dateTextBlock" />
             </Viewbox>
 
             <Viewbox>
-                <TextBlock Text="hire date" Foreground="White" Margin="5" />
+                <TextBlock Text="hire date" Foreground="LightCoral" Margin="5" />
             </Viewbox>
         </Grid>
 
@@ -102,14 +102,14 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.5" Background="LightGreen" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Opacity="0.4" Background="LightGreen" Grid.ColumnSpan="2" Grid.RowSpan="2" />
 
             <Viewbox Grid.ColumnSpan="2" Grid.Row="1">
-                <TextBlock Text="1500" Foreground="White" Margin="5" Name="salaryTextBlock" />
+                <TextBlock Text="1500" Foreground="LightGreen" Margin="5" Name="salaryTextBlock" />
             </Viewbox>
 
             <Viewbox Grid.Column="1">
-                <TextBlock Text="salary" Foreground="White" Margin="5" />
+                <TextBlock Text="salary" Foreground="LightGreen" Margin="5" />
             </Viewbox>
         </Grid>
 
@@ -125,7 +125,15 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="Purple" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightBlue"  Grid.ColumnSpan="2" Grid.RowSpan="2" />
+
+            <Viewbox Grid.ColumnSpan="2">
+                <TextBlock Text="John" Foreground="White" Margin="5" Name="firstTextBlock" />
+            </Viewbox>
+
+            <Viewbox Grid.ColumnSpan="2" Grid.Row="1">
+                <TextBlock Text="Snow" Foreground="White" Margin="5" Name="lastTextBlock" />
+            </Viewbox>
         </Grid>
     </Grid>
 </Page>

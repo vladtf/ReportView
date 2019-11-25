@@ -24,7 +24,7 @@
 
         <TextBlock Text="➣" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" />
         <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Name="nextBorder"
-                 MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" />
+                 MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" MouseLeftButtonUp="nextBorder_MouseLeftButtonUp" />
 
     </Grid>
 </UserControl>

@@ -9,6 +9,8 @@
         public string email { get; set; }
         public string department { get; set; }
         public string salary { get; set; }
+        public string hire_date { get; set; }
+
 
         //get FullInfo to be displayed
         public string FullInfo

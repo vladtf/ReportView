@@ -29,7 +29,7 @@ namespace ReportView
         public string email { get; set; }
         public string department { get; set; }
         public string salary { get; set; }
-
+        public string hire_date { get; set; }
         private void FullInfo(Person person)
         {
             this.id = person.id;
@@ -38,6 +38,7 @@ namespace ReportView
             this.email = person.email;
             this.department = person.department;
             this.salary = person.salary;
+            this.hire_date = person.hire_date;
 
             
         }
@@ -52,7 +53,9 @@ namespace ReportView
             idTextBlock.Text = id;
             emailTextBlock.Text = email;
             salaryTextBlock.Text = salary;
-            dateTextBlock.Text = department;
+            dateTextBlock.Text = hire_date;
+            firstTextBlock.Text = first_name;
+            lastTextBlock.Text = last_name;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

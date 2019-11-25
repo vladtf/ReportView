@@ -28,6 +28,8 @@ namespace ReportView
         public string department { get; set; }
         public string salary { get; set; }
 
+        public string hire_date { get; set; }
+
         private void FullInfo(Person person)
         {
             this.id = person.id;
@@ -36,6 +38,7 @@ namespace ReportView
             this.email = person.email;
             this.department = person.department;
             this.salary = person.salary;
+            this.hire_date = person.hire_date;
         }
 
         private MainWindow parent;
@@ -79,6 +82,11 @@ namespace ReportView
         {
             if (e.ClickCount == 2)
                 parent.NewReportPage(person);
+        }
+
+        private void nextBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            parent.NewReportPage(person);
         }
     }
 }

@@ -58,7 +58,7 @@
 
             <Border Background="LightBlue" Opacity="0.4"/>
 
-            <Frame Name="pageViewer" Grid.Column="1"/>
+            <Frame Name="pageViewer" Grid.Column="1" NavigationUIVisibility="Hidden"/>
 
         </Grid>
     </Grid>
