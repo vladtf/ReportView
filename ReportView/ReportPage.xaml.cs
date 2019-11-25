@@ -56,11 +56,52 @@ namespace ReportView
             dateTextBlock.Text = hire_date;
             firstTextBlock.Text = first_name;
             lastTextBlock.Text = last_name;
+            ICOTextBlock.Text = SetDepartmentText(department);
+            departmentTextBlock.Text = department;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             parent.RemoveChild(this);
+        }
+
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Border border = (Border)sender;
+            if (border == secondCenterBorder)
+                firsCenterBorder.Opacity = 1;
+            else
+                border.Opacity += 0.2;
+        }
+
+        private void Border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Border border = (Border)sender;
+
+            if (border == secondCenterBorder)
+                firsCenterBorder.Opacity = 0.8;
+            else
+                border.Opacity -= 0.2;
+        }
+
+        private string SetDepartmentText(string text)
+        {
+            switch(text)
+            {
+                case "Accounting":return "📒";
+                case "Business Development": return "📊 ";
+                case "Engineering": return "⚙";
+                case "Human Resources": return "👥";
+                case "Legal": return "⚖️";
+                case "Marketing": return "📢";
+                case "Product Management": return "📦";
+                case "Research and Development": return "🔬";
+                case "Sales": return "💰";
+                case "Services": return "🛠️";
+                case "Support": return "📞";
+                case "Training": return "☑️";
+            }
+            return null;
         }
     }
 }
