@@ -8,7 +8,7 @@ namespace ReportView
     /// </summary>
     public partial class MainWindow : Window
     {
-        private HomePage HomePage = new HomePage();
+        private HomePage homePage;
 
         public MainWindow()
         {
@@ -16,8 +16,11 @@ namespace ReportView
 
             InitializeComponent();
 
-            HomePage.Height = pageViewer.Height;
-            pageViewer.Content = HomePage;
+            homePage = new HomePage(this);
+            homePage.Height = pageViewer.Height;
+
+
+            pageViewer.Content = homePage;
 
         }
 
@@ -56,6 +59,20 @@ namespace ReportView
                 this.WindowState = WindowState.Normal;
                 minimizeButton.Content = "🗖";
             }
+        }
+
+        public void RemoveChild(ReportPage reportPage)
+        {
+            pageViewer.Content = homePage;
+        }
+
+        public void NewReportPage(Person person)
+        {
+            ReportPage reportPage = new ReportPage(this, person);
+            
+            reportPage.Height = pageViewer.Height;
+            pageViewer.Content = null;
+            pageViewer.Content = reportPage;
         }
     }
 }

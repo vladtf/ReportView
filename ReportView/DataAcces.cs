@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows;
-using MySql.Data.MySqlClient;
 namespace ReportView
 {
     internal class DataAcces
@@ -18,7 +17,8 @@ namespace ReportView
                 //var output = connection.Query<Person>($"Select * from sakila.actor where last_name = '{lastName}'").ToList();
                 try
                 {
-                    return connection.Query<Person>("select * from dbo.employees;").ToList();
+                    var output= connection.Query<Person>("select * from [dbo].[employees];").ToList();
+                    return output;
                 }
                 catch
                 {

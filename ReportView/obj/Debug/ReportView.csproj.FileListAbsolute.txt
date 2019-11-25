@@ -20,3 +20,10 @@ C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Dapper.dl
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Dapper.xml
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportView.csproj.CopyComplete
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ResourceDictionary.baml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Google.Protobuf.dll
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Renci.SshNet.dll
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Google.Protobuf.xml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Debug\Renci.SshNet.xml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportPage.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Debug\ReportPage.baml

@@ -16,7 +16,7 @@
             
         </Grid.ColumnDefinitions>
 
-        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightGray" Opacity="0.2" Grid.ColumnSpan="3" Name="backgroundBorder"/>
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightGray" Opacity="0.2" Grid.ColumnSpan="3" Name="backgroundBorder" MouseDown="backgroundBorder_MouseDown"/>
 
         <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0"/>
         

@@ -20,9 +20,10 @@ namespace ReportView
     {
         private List<Person> people = new List<Person>();
         private List<PersonView> peopleView = new List<PersonView>();
-
-        public HomePage()
+        private MainWindow parent;
+        public HomePage(MainWindow mainWindow)
         {
+            this.parent = mainWindow;
             InitializeComponent();
 
             Search_Action();
@@ -44,7 +45,7 @@ namespace ReportView
 
             foreach(Person person in people)
             {
-                PersonView personView = new PersonView(person);
+                PersonView personView = new PersonView(parent,person);
                 peopleView.Add(personView);
             }
 

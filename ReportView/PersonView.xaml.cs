@@ -26,6 +26,8 @@ namespace ReportView
         public string last_name { get; set; }
         public string email { get; set; }
         public string department { get; set; }
+        public string salary { get; set; }
+
         private void FullInfo(Person person)
         {
             this.id = person.id;
@@ -33,10 +35,16 @@ namespace ReportView
             this.last_name = person.last_name;
             this.email = person.email;
             this.department = person.department;
+            this.salary = person.salary;
         }
 
-        public PersonView(Person person)
+        private MainWindow parent;
+        private Person person;
+        
+        public PersonView(MainWindow mainWindow,Person person)
         {
+            this.parent = mainWindow;
+            this.person = person;
 
             FullInfo(person);
 
@@ -67,8 +75,10 @@ namespace ReportView
             nextBorder.Background = new SolidColorBrush(Colors.LightGray) { Opacity = 0 };
         }
 
-        
-
-          
+        private void backgroundBorder_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+                parent.NewReportPage(person);
+        }
     }
 }

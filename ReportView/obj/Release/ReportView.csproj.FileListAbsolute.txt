@@ -22,8 +22,6 @@ C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\ReportV
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\ReportView.pdb
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\BouncyCastle.Crypto.dll
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Google.Protobuf.dll
-C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MySql.Data.dll
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Renci.SshNet.dll
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Google.Protobuf.xml
-C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MySql.Data.xml
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Renci.SshNet.xml

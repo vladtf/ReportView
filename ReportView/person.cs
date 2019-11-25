@@ -8,6 +8,7 @@
         public string last_name { get; set; }
         public string email { get; set; }
         public string department { get; set; }
+        public string salary { get; set; }
 
         //get FullInfo to be displayed
         public string FullInfo
