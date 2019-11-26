@@ -1,16 +1,14 @@
 ﻿<Page x:Class="ReportView.HomePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ReportView"
       mc:Ignorable="d" d:DesignWidth="800"
       Title="HomePage" Height="600">
 
-    
-    
     <Grid Margin="75" Name="homeStackPanel">
-        
+
         <Grid.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
@@ -18,26 +16,26 @@
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Grid.Resources>
-        
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-            
-        <Grid Background="LightBlue" Grid.Row="0">
+
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="🔎" Foreground="White" Height="35" Width="35" FontSize="20" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Height="35" Background="Transparent" BorderThickness="0" FontSize="25" VerticalAlignment="Center"/>
+            <Border BorderThickness="2" BorderBrush="LightBlue" Background="LightBlue" Opacity="0.5" Grid.ColumnSpan="2" CornerRadius="8" />
+            <TextBlock Text="🔎" Foreground="White" Height="35" Width="35" FontSize="20" VerticalAlignment="Center" Margin="5" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" />
+            <TextBox Grid.Column="1" Height="35" Background="Transparent" BorderThickness="0" FontSize="22" VerticalAlignment="Center" Margin="5" Name="textBox" TextChanged="textBox_TextChanged" />
         </Grid>
-        <ScrollViewer Grid.Row="1" Style="{StaticResource LeftScrollViewer}">
+
+        <Border BorderThickness="2" BorderBrush="Gray" Background="LightGray" Opacity="0.2" Grid.Row="1" CornerRadius="4" />
+
+        <ScrollViewer Grid.Row="1" Style="{StaticResource LeftScrollViewer}" Margin="5">
             <StackPanel Name="homePageStackPanel" CanVerticallyScroll="True" />
         </ScrollViewer>
-        <Grid.Background>
-            <SolidColorBrush Color="LightGray" Opacity="0.2"/>
-        </Grid.Background>
-
     </Grid>
 </Page>

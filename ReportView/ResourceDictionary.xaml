@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ReportView">
 
-
     <Style x:Key="ScrollBarTrackThumb"
         TargetType="{x:Type Thumb}">
         <Setter Property="Template">
@@ -136,27 +135,27 @@
     </Style>
 
     <Style x:Key="LeftScrollViewer" TargetType="{x:Type ScrollViewer}">
-        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollViewer}">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <ScrollContentPresenter Grid.Column="1"/>
+                        <ScrollContentPresenter Grid.Column="1" />
 
                         <ScrollBar Name="PART_VerticalScrollBar"
             Value="{TemplateBinding VerticalOffset}"
             Maximum="{TemplateBinding ScrollableHeight}"
             ViewportSize="{TemplateBinding ViewportHeight}"
-            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" />
                         <ScrollBar Name="PART_HorizontalScrollBar"
             Orientation="Horizontal"
             Grid.Row="1"
@@ -164,12 +163,10 @@
             Value="{TemplateBinding HorizontalOffset}"
             Maximum="{TemplateBinding ScrollableWidth}"
             ViewportSize="{TemplateBinding ViewportWidth}"
-            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
-
+            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>

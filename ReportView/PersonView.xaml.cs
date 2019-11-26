@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ReportView
 {
@@ -22,6 +11,7 @@ namespace ReportView
     {
         //stuff we want to get from database
         public string id { get; set; }
+
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string email { get; set; }
@@ -43,8 +33,8 @@ namespace ReportView
 
         private MainWindow parent;
         private Person person;
-        
-        public PersonView(MainWindow mainWindow,Person person)
+
+        public PersonView(MainWindow mainWindow, Person person)
         {
             this.parent = mainWindow;
             this.person = person;
@@ -54,13 +44,11 @@ namespace ReportView
             InitializeComponent();
 
             this.lastNameTextBlock.Text = this.last_name;
-
-
         }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
-            backgroundBorder.Opacity = 0.4;            
+            backgroundBorder.Opacity = 0.4;
         }
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)

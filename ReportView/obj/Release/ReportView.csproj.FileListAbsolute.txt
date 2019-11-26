@@ -25,3 +25,11 @@ C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Google.
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Renci.SshNet.dll
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Google.Protobuf.xml
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Renci.SshNet.xml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\ReportPage.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\ReportPage.baml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MaterialDesignColors.dll
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MaterialDesignColors.pdb
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MaterialDesignThemes.Wpf.pdb
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MaterialDesignThemes.Wpf.xml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\App.baml

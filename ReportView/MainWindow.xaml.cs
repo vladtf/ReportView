@@ -1,5 +1,12 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using System.Configuration;
+using System.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace ReportView
 {
@@ -16,11 +23,12 @@ namespace ReportView
 
             InitializeComponent();
 
+
             homePage = new HomePage(this);
             homePage.Height = pageViewer.Height;
 
 
-            pageViewer.Content = homePage;
+            pageViewer.Navigate(homePage);
 
         }
 
@@ -39,6 +47,8 @@ namespace ReportView
 
         private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
+            Helper helper = new Helper();
+            helper.SaveConnectionString("work", "");
             this.Close();
         }
 
@@ -69,10 +79,56 @@ namespace ReportView
         public void NewReportPage(Person person)
         {
             ReportPage reportPage = new ReportPage(this, person);
-            
+
             reportPage.Height = pageViewer.Height;
             pageViewer.Content = null;
             pageViewer.Content = reportPage;
+        }
+
+        private void goBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (pageViewer.NavigationService.CanGoBack)
+                pageViewer.NavigationService.GoBack();
+        }
+
+        private void goForward_Click(object sender, RoutedEventArgs e)
+        {
+            if (pageViewer.NavigationService.CanGoForward)
+                pageViewer.NavigationService.GoForward();
+        }
+
+        private void home_Click(object sender, RoutedEventArgs e)
+        {
+            pageViewer.Navigate(homePage);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            serverText.Items.Add("work.database.windows.net");
+            serverText.Items.Add(".");
+            serverText.Items.Add("(local)");
+            serverText.SelectedIndex = 0;
+
+            databaseText.Items.Add("work");
+            databaseText.SelectedIndex = 0;
+
+            // The password character is an asterisk.
+            passwordText.PasswordChar = '*';
+            // The control will allow no more than 14 characters.
+            passwordText.MaxLength = 14;
+        }
+
+        private void connection_Click(object sender, RoutedEventArgs e)
+        {
+            string connectionString = string.Format("Server=tcp:{0},1433;Initial Catalog={1};Persist Security Info=False;User ID={2};Password={3};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+                serverText.Text, databaseText.Text, usernameText.Text, passwordText.Password);
+            try
+            {
+                Helper helper = new Helper();
+                helper.SaveConnectionString("work",connectionString);
+                homePage.Initial_Search_Action();
+            }
+            catch { MessageBox.Show("Connection Failed."); }
         }
     }
 }

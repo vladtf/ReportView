@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows;
+
 namespace ReportView
 {
     internal class DataAcces
@@ -17,15 +18,14 @@ namespace ReportView
                 //var output = connection.Query<Person>($"Select * from sakila.actor where last_name = '{lastName}'").ToList();
                 try
                 {
-                    var output= connection.Query<Person>("select * from [dbo].[employees];").ToList();
+                    var output = connection.Query<Person>("select * from [dbo].[employees];").ToList();
+                    MessageBox.Show("Connected!");
                     return output;
                 }
                 catch
                 {
-                    MessageBox.Show("No DataBase Connection");
+                    return null;
                 }
-
-                return null;
             }
         }
     }

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ReportView
 {
@@ -20,16 +9,18 @@ namespace ReportView
     /// </summary>
     public partial class ReportPage : Page
     {
-        MainWindow parent;
+        private MainWindow parent;
 
         //stuff we want to get from database
         public string id { get; set; }
+
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string email { get; set; }
         public string department { get; set; }
         public string salary { get; set; }
         public string hire_date { get; set; }
+
         private void FullInfo(Person person)
         {
             this.id = person.id;
@@ -39,9 +30,8 @@ namespace ReportView
             this.department = person.department;
             this.salary = person.salary;
             this.hire_date = person.hire_date;
-
-            
         }
+
         public ReportPage(MainWindow mainWindow, Person person)
         {
             parent = mainWindow;
@@ -86,9 +76,9 @@ namespace ReportView
 
         private string SetDepartmentText(string text)
         {
-            switch(text)
+            switch (text)
             {
-                case "Accounting":return "📒";
+                case "Accounting": return "📒";
                 case "Business Development": return "📊 ";
                 case "Engineering": return "⚙";
                 case "Human Resources": return "👥";

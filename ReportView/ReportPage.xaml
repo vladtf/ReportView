@@ -144,7 +144,6 @@
             </Viewbox>
 
             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="Transparent"  Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Name="secondCenterBorder" />
-            
         </Grid>
     </Grid>
 </Page>
