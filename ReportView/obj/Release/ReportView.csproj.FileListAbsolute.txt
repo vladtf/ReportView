@@ -33,3 +33,7 @@ C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\Materia
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MaterialDesignThemes.Wpf.pdb
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\bin\Release\MaterialDesignThemes.Wpf.xml
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\App.baml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\personViewScroll.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\personViewScroll.baml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\popupbox.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportView\obj\Release\popupbox.baml

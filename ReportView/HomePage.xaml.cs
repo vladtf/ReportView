@@ -45,7 +45,6 @@ namespace ReportView
             catch { }
             try
             {
-
                 Search_Action();
 
                 foreach (PersonView personView in peopleView)

@@ -1,13 +1,6 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Input;
-using System.Configuration;
-using System.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-
 namespace ReportView
 {
     /// <summary>
@@ -17,19 +10,17 @@ namespace ReportView
     {
         private HomePage homePage;
 
+        private List<personViewScroll> peopleViewScrolls = new List<personViewScroll>();
         public MainWindow()
         {
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
 
             InitializeComponent();
 
-
             homePage = new HomePage(this);
             homePage.Height = pageViewer.Height;
 
-
             pageViewer.Navigate(homePage);
-
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -79,10 +70,26 @@ namespace ReportView
         public void NewReportPage(Person person)
         {
             ReportPage reportPage = new ReportPage(this, person);
-
+            personViewScroll personView = new personViewScroll(this, person);
+            allOpenedPages.Children.Add(personView);
+            peopleViewScrolls.Add(personView);
             reportPage.Height = pageViewer.Height;
             pageViewer.Content = null;
             pageViewer.Content = reportPage;
+        }
+
+        public void NewReportPageView(Person person)
+        {
+            ReportPage reportPage = new ReportPage(this, person);
+            reportPage.Height = pageViewer.Height;
+            pageViewer.Content = null;
+            pageViewer.Content = reportPage;
+        }
+
+        public void CloseReportPage(personViewScroll personViewScroll)
+        {
+            allOpenedPages.Children.Remove(personViewScroll);
+            pageViewer.Content = homePage;
         }
 
         private void goBack_Click(object sender, RoutedEventArgs e)
@@ -125,7 +132,7 @@ namespace ReportView
             try
             {
                 Helper helper = new Helper();
-                helper.SaveConnectionString("work",connectionString);
+                helper.SaveConnectionString("work", connectionString);
                 homePage.Initial_Search_Action();
             }
             catch { MessageBox.Show("Connection Failed."); }

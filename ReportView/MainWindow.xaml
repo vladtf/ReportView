@@ -9,7 +9,15 @@
         Title="Report View" Height="550" Width="800" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Loaded="Window_Loaded">
 
     <Grid>
-        
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="ResourceDictionary.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
         <Grid.Background>
             <ImageBrush ImageSource="Resources/background.jpg" Opacity="0.9" />
         </Grid.Background>
@@ -31,10 +39,10 @@
                 <Button Width="50" Height="50" Content="⯇" Background="Transparent" BorderThickness="0" Foreground="LightBlue" Click="goBack_Click" />
                 <Button Width="50" Height="50" Content="⯈" Background="Transparent" BorderThickness="0" Foreground="LightBlue" Click="goForward_Click" />
                 <Button Width="150" Height="50" Background="Transparent" BorderThickness="0" Name="homeButton" Click="home_Click" HorizontalContentAlignment="Left">
-                    <Grid >
+                    <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Viewbox>
                             <Image Source="Resources/home.png" Stretch="UniformToFill" />
@@ -47,23 +55,23 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Grid.Column="2">
-                
+
                 <StackPanel Orientation="Horizontal" Height="50">
                     <Label Content="●" FontSize="20" Foreground="Green" Height="50" VerticalContentAlignment="Center" Name="connectionStatus" />
                     <Label VerticalContentAlignment="Center" Height="50" Foreground="White">Connection</Label>
                 </StackPanel>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignLeftEdges" StaysOpen="True" Margin="10" Background="LightBlue" Foreground="White">
-                    <StackPanel Width="200">
-                        <TextBlock Text="server"  HorizontalAlignment="Center"/>
-                        <ComboBox Margin="2,2,2,0" Name="serverText"/>
-                        <TextBlock Text="database"  HorizontalAlignment="Center"/>
-                        <ComboBox Margin="2,0,2,0" Name="databaseText"/>
-                        <TextBlock Text="user name"  HorizontalAlignment="Center"/>
-                        <TextBox Margin="2,0,2,0" Name="usernameText" Text="worker"/>
-                        <TextBlock Text="password"  HorizontalAlignment="Center"/>
-                        <PasswordBox Margin="2,0,2,0" Name="passwordText"/>
-                        <Separator/>
-                        <Button Content="Connect" HorizontalContentAlignment="Center" Click="connection_Click"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="True" Margin="10" Background="LightBlue" Foreground="White">
+                    <StackPanel Width="200" >
+                        <TextBlock Text="server"  HorizontalAlignment="Center" />
+                        <ComboBox Margin="2,2,2,0" Name="serverText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1"/>
+                        <TextBlock Text="database"  HorizontalAlignment="Center" />
+                        <ComboBox Margin="2,0,2,0" Name="databaseText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1"/>
+                        <TextBlock Text="user name"  HorizontalAlignment="Center" />
+                        <TextBox Margin="2,0,2,0" Name="usernameText" Text="worker" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1"/>
+                        <TextBlock Text="password"  HorizontalAlignment="Center" />
+                        <PasswordBox Margin="2,0,2,0" Name="passwordText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
+                        <Separator />
+                        <Button Content="Connect" HorizontalContentAlignment="Center" Background="#2196F3" Click="connection_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
                 <Button Width="50" Height="50" Content="🗕" Background="Transparent" BorderThickness="0" Foreground="White" Click="Minimize_Button_Click" />
@@ -73,12 +81,17 @@
         </Grid>
 
         <Grid Grid.Row="1">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Border Background="LightBlue" Opacity="0.4" />
+
+            <ScrollViewer Style="{StaticResource LeftScrollViewer}" Margin="5">
+                <StackPanel Name="allOpenedPages" CanVerticallyScroll="True" />
+            </ScrollViewer>
 
             <Frame Name="pageViewer" Grid.Column="1" NavigationUIVisibility="Hidden" />
         </Grid>

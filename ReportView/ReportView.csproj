@@ -84,7 +84,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AppSetting.cs" />
+    <Compile Include="personViewScroll.xaml.cs">
+      <DependentUpon>personViewScroll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="popupbox.xaml.cs">
+      <DependentUpon>popupbox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReportPage.xaml.cs">
       <DependentUpon>ReportPage.xaml</DependentUpon>
     </Compile>
@@ -110,6 +115,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PersonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="personViewScroll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="popupbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
