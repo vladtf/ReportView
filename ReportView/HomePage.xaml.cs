@@ -18,7 +18,6 @@ namespace ReportView
             this.parent = mainWindow;
             InitializeComponent();
 
-            Initial_Search_Action();
         }
 
         private void Search_Action()
@@ -52,9 +51,9 @@ namespace ReportView
                     homePageStackPanel.Children.Add(personView);
                 }
 
-                parent.connectionStatus.Foreground = new SolidColorBrush(Colors.Green);
+                parent.connectionStatus.Foreground = new SolidColorBrush(Colors.Green); parent.connectionICON.Foreground = new SolidColorBrush(Colors.Transparent);
             }
-            catch { MessageBox.Show("No Connection!"); parent.connectionStatus.Foreground = new SolidColorBrush(Colors.Red); }
+            catch {parent.connectionStatus.Foreground = new SolidColorBrush(Colors.Red); parent.connectionICON.Foreground = new SolidColorBrush(Colors.Red); }
         }
 
         private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -78,10 +77,10 @@ namespace ReportView
             Display_Selected();
         }
 
-        //private bool IsFound(string email)
-        //{
-        //    var regex = new Regex(, RegexOptions.IgnoreCase);
-        //    return regex.IsMatch(email);
-        //}
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+            parent.Do_Login();
+        }
+
     }
 }

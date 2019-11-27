@@ -123,9 +123,25 @@ namespace ReportView
             passwordText.PasswordChar = '*';
             // The control will allow no more than 14 characters.
             passwordText.MaxLength = 14;
+
+            //Set last login saved
+            usernameText.Text = Helper.LoginVal("login");
         }
 
         private void connection_Click(object sender, RoutedEventArgs e)
+        {
+            Do_Login();
+            PopupBox.IsPopupOpen = false;
+
+        }
+
+        private void passwordText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Enter)
+            Do_Login();
+        }
+
+        public void Do_Login()
         {
             string connectionString = string.Format("Server=tcp:{0},1433;Initial Catalog={1};Persist Security Info=False;User ID={2};Password={3};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
                 serverText.Text, databaseText.Text, usernameText.Text, passwordText.Password);
@@ -134,6 +150,7 @@ namespace ReportView
                 Helper helper = new Helper();
                 helper.SaveConnectionString("work", connectionString);
                 homePage.Initial_Search_Action();
+                helper.SaveLoginString("login", usernameText.Text);
             }
             catch { MessageBox.Show("Connection Failed."); }
         }

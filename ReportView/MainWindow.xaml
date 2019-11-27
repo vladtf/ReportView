@@ -14,6 +14,7 @@
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <ResourceDictionary Source="ResourceDictionary.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Grid.Resources>
@@ -56,24 +57,34 @@
 
             <StackPanel Orientation="Horizontal" Grid.Column="2">
 
-                <StackPanel Orientation="Horizontal" Height="50">
-                    <Label Content="●" FontSize="20" Foreground="Green" Height="50" VerticalContentAlignment="Center" Name="connectionStatus" />
-                    <Label VerticalContentAlignment="Center" Height="50" Foreground="White">Connection</Label>
-                </StackPanel>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="True" Margin="10" Background="LightBlue" Foreground="White">
-                    <StackPanel Width="200" >
+
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignCentres" StaysOpen="True" Background="LightBlue" Foreground="White" x:Name="PopupBox" Margin="0,5,10,0">
+                    <materialDesign:PopupBox.ToggleContent>
+                        <Border Background="Transparent" TextElement.Foreground="{DynamicResource PrimaryHueMidForegroundBrush}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ErrorOutline"  Margin="10,0,5,0" Foreground="Red" VerticalAlignment="Center" Name="connectionICON"/>
+                                <TextBlock Text="Connection" FontSize="15" VerticalAlignment="Center" />
+                                <Label Content="●" FontSize="20" Foreground="Red" VerticalContentAlignment="Center" Name="connectionStatus" Margin="0,0,5,2"/>
+                            </StackPanel>
+                        </Border>
+                    </materialDesign:PopupBox.ToggleContent>
+                    <StackPanel Width="200">
                         <TextBlock Text="server"  HorizontalAlignment="Center" />
-                        <ComboBox Margin="2,2,2,0" Name="serverText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1"/>
+                        <ComboBox Margin="2,2,2,0" Name="serverText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
                         <TextBlock Text="database"  HorizontalAlignment="Center" />
-                        <ComboBox Margin="2,0,2,0" Name="databaseText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1"/>
+                        <ComboBox Margin="2,0,2,0" Name="databaseText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
                         <TextBlock Text="user name"  HorizontalAlignment="Center" />
-                        <TextBox Margin="2,0,2,0" Name="usernameText" Text="worker" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1"/>
+                        <TextBox Margin="2,0,2,0" Name="usernameText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
                         <TextBlock Text="password"  HorizontalAlignment="Center" />
-                        <PasswordBox Margin="2,0,2,0" Name="passwordText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
+                        <PasswordBox Margin="2,0,2,0" Name="passwordText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" KeyDown="passwordText_KeyDown" Password="Employees123" />
                         <Separator />
-                        <Button Content="Connect" HorizontalContentAlignment="Center" Background="#2196F3" Click="connection_Click"/>
+                        <Grid>
+                            <Border Background="#2196F3" />
+                            <Button HorizontalContentAlignment="Center" Background="Transparent" Foreground="White" Content="Connect" Click="connection_Click" />
+                        </Grid>
                     </StackPanel>
                 </materialDesign:PopupBox>
+
                 <Button Width="50" Height="50" Content="🗕" Background="Transparent" BorderThickness="0" Foreground="White" Click="Minimize_Button_Click" />
                 <Button Width="50" Height="50" Content="🗖" Background="Transparent" BorderThickness="0" Foreground="White" Click="Maximize_Button_Click" Name="minimizeButton" />
                 <Button Width="50" Height="50" Content="🗙" Background="Transparent" BorderThickness="0" Foreground="White" Click="Close_Button_Click" />

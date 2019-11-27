@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ReportView"
              mc:Ignorable="d"
-             d:DesignHeight="40" d:DesignWidth="800" Margin="5" BorderThickness="0">
-
+             Margin="5" BorderThickness="0">
     <Grid MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
         <Grid.ColumnDefinitions>
@@ -22,7 +21,8 @@
         <TextBlock Text="Guiness" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" Name="lastNameTextBlock" MouseDown="backgroundBorder_MouseDown" />
 
         <TextBlock Text="➣" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" />
-        <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Name="nextBorder"
+        <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Name="nextBorder" Margin="2"
                  MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" MouseLeftButtonUp="nextBorder_MouseLeftButtonUp" MouseDown="backgroundBorder_MouseDown" />
     </Grid>
+
 </UserControl>

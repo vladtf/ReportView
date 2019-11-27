@@ -13,14 +13,14 @@
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
 
-        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightGray" Opacity="0.2" Grid.ColumnSpan="3" Name="backgroundBorder" MouseDown="backgroundBorder_MouseDown" />
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightGray" Opacity="0.4" Grid.ColumnSpan="3" Name="backgroundBorder" MouseDown="backgroundBorder_MouseDown" />
 
-        <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0" MouseDown="backgroundBorder_MouseDown" Foreground="LightGray" Opacity="0.8" />
+        <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0" MouseDown="backgroundBorder_MouseDown" Foreground="White" Opacity="0.8" Name="personIcon" />
 
-        <TextBlock Text="Guiness" FontSize="25" Grid.Column="1" Foreground="LightGray"  HorizontalAlignment="Center" VerticalAlignment="Center" Name="lastNameTextBlock" MouseDown="backgroundBorder_MouseDown" />
+        <TextBlock Text="Guiness" FontSize="25" Grid.Column="1" Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Center" Name="lastNameTextBlock" MouseDown="backgroundBorder_MouseDown" />
 
-        <TextBlock Text="🗙" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" Foreground="LightGray" Opacity="0.4" />
-        <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Name="nextBorder"
+        <TextBlock Text="🗙" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" Foreground="White" Opacity="0.4" />
+        <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.4" Name="nextBorder" Margin="3"
                  MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" MouseLeftButtonUp="nextBorder_MouseLeftButtonUp" MouseDown="backgroundBorder_MouseDown" />
     </Grid>
 </UserControl>

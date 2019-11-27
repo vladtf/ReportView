@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -19,6 +20,10 @@ namespace ReportView
         public string salary { get; set; }
 
         public string hire_date { get; set; }
+
+        //randomizer
+
+        private Random r = new Random();
 
         private void FullInfo(Person person)
         {
@@ -44,6 +49,8 @@ namespace ReportView
             InitializeComponent();
 
             this.lastNameTextBlock.Text = this.last_name;
+
+            personIcon.Foreground = RandomColor();
         }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
@@ -74,6 +81,12 @@ namespace ReportView
         private void nextBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             parent.CloseReportPage(this);
+        }
+
+        private Brush RandomColor()
+        {
+            Brush brush = new SolidColorBrush(Color.FromRgb((byte)r.Next(1, 255),(byte)r.Next(1, 255), (byte)r.Next(1, 233)));
+            return brush;
         }
     }
 }

@@ -19,7 +19,6 @@ namespace ReportView
                 try
                 {
                     var output = connection.Query<Person>("select * from [dbo].[employees];").ToList();
-                    MessageBox.Show("Connected!");
                     return output;
                 }
                 catch

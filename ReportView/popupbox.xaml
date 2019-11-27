@@ -16,6 +16,10 @@
         <TextBlock Text="password"  HorizontalAlignment="Center" />
         <PasswordBox Margin="2,0,2,0" Name="passwordText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
         <Separator />
-        <Button Content="Connect" HorizontalContentAlignment="Center" Background="#2196F3" />
+        <Grid >
+            <Border Background="#2196F3"/>
+            <Button HorizontalContentAlignment="Center" Background="Transparent" Foreground="White" Content="Connect" />
+        </Grid>
+        
     </StackPanel>
 </UserControl>

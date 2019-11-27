@@ -27,5 +27,18 @@ namespace ReportView
 
             ConfigurationManager.RefreshSection("connectionStrings");
         }
+
+        public void SaveLoginString(string key, string value)
+        {
+
+            config.AppSettings.Settings[key].Value = value;
+
+            config.Save(ConfigurationSaveMode.Modified);
+        }
+
+        public static string LoginVal(string key)
+        {
+            return ConfigurationManager.AppSettings[key];
+        }
     }
 }
