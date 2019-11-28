@@ -111,3 +111,5 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Release\VTFDataManager
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Release\VTFDataManager.csproj.CopyComplete
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Release\VTFDataManager.dll
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Release\VTFDataManager.pdb
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\bin\Swashbuckle.Core.dll
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\bin\WebActivatorEx.dll
