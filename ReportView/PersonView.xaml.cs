@@ -68,8 +68,7 @@ namespace ReportView
 
         private void backgroundBorder_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ClickCount == 2)
-                parent.NewReportPage(person);
+            parent.NewReportPage(person);
         }
 
         private void nextBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

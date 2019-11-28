@@ -74,7 +74,7 @@
                         <TextBlock Text="database"  HorizontalAlignment="Center" />
                         <ComboBox Margin="2,0,2,0" Name="databaseText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
                         <TextBlock Text="user name"  HorizontalAlignment="Center" />
-                        <TextBox Margin="2,0,2,0" Name="usernameText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" />
+                        <TextBox Margin="2,0,2,0" Name="usernameText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" KeyDown="passwordText_KeyDown"/>
                         <TextBlock Text="password"  HorizontalAlignment="Center" />
                         <PasswordBox Margin="2,0,2,0" Name="passwordText" Background="#545E6A" Foreground="White" BorderBrush="Black" BorderThickness="1" KeyDown="passwordText_KeyDown" Password="Employees123" />
                         <Separator />
