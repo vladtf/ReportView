@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportView", "ReportView\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTFDataManager", "VTFDataManager\VTFDataManager.csproj", "{201D1A48-F83B-46A1-8789-7B6EA84CD743}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "VTFData", "VTFData\VTFData.sqlproj", "{D505BFAF-D145-4283-AAB8-C8F4762DD923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{201D1A48-F83B-46A1-8789-7B6EA84CD743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{201D1A48-F83B-46A1-8789-7B6EA84CD743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{201D1A48-F83B-46A1-8789-7B6EA84CD743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D505BFAF-D145-4283-AAB8-C8F4762DD923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D505BFAF-D145-4283-AAB8-C8F4762DD923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D505BFAF-D145-4283-AAB8-C8F4762DD923}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D505BFAF-D145-4283-AAB8-C8F4762DD923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D505BFAF-D145-4283-AAB8-C8F4762DD923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D505BFAF-D145-4283-AAB8-C8F4762DD923}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

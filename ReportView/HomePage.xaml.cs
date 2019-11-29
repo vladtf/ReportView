@@ -72,6 +72,16 @@ namespace ReportView
                 }
         }
 
+        private void Display_Selected_Department(string department)
+        {
+            homePageStackPanel.Children.Clear();
+                foreach (PersonView personView in peopleView)
+                {
+                    if (personView.department==department) homePageStackPanel.Children.Add(personView);
+                }
+        }
+
+
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             Display_Selected();
@@ -82,5 +92,13 @@ namespace ReportView
             parent.Do_Login();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            PopupBox.IsPopupOpen = false;
+            Display_Selected_Department(button.Tag.ToString());
+
+
+        }
     }
 }

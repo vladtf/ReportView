@@ -51,6 +51,7 @@ namespace ReportView
             this.lastNameTextBlock.Text = this.last_name;
 
             personIcon.Foreground = RandomColor();
+            personIcon.Text = SetDepartmentText(department);
         }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
@@ -87,6 +88,26 @@ namespace ReportView
         {
             Brush brush = new SolidColorBrush(Color.FromRgb((byte)r.Next(1, 255),(byte)r.Next(1, 255), (byte)r.Next(1, 233)));
             return brush;
+        }
+
+        private string SetDepartmentText(string text)
+        {
+            switch (text)
+            {
+                case "Accounting": return "📒";
+                case "Business Development": return "📊 ";
+                case "Engineering": return "⚙";
+                case "Human Resources": return "👥";
+                case "Legal": return "⚖️";
+                case "Marketing": return "📢";
+                case "Product Management": return "📦";
+                case "Research and Development": return "🔬";
+                case "Sales": return "💰";
+                case "Services": return "🛠️";
+                case "Support": return "📞";
+                case "Training": return "☑️";
+            }
+            return null;
         }
     }
 }

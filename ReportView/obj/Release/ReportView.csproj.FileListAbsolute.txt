@@ -83,3 +83,4 @@ C:\Users\Skipper\Desktop\C#\ReportView\ReportView\bin\Release\System.Windows.Int
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\bin\Release\Caliburn.Micro.xml
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\bin\Release\Caliburn.Micro.Platform.xml
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\bin\Release\Caliburn.Micro.Platform.Core.xml
+C:\Users\Skipper\Desktop\C#\ReportView\ReportView\bin\Release\Google.Protobuf.pdb

@@ -43,7 +43,8 @@ namespace ReportView
 
             InitializeComponent();
 
-            this.lastNameTextBlock.Text = this.last_name;
+            this.lastNameTextBlock.Text = $"{this.last_name} {first_name.Substring(0, 1)}. ";
+            departmentTextBlock.Text = SetDepartmentText(department);
         }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
@@ -74,6 +75,26 @@ namespace ReportView
         private void nextBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             parent.NewReportPage(person);
+        }
+
+        private string SetDepartmentText(string text)
+        {
+            switch (text)
+            {
+                case "Accounting": return "📒";
+                case "Business Development": return "📊 ";
+                case "Engineering": return "⚙";
+                case "Human Resources": return "👥";
+                case "Legal": return "⚖️";
+                case "Marketing": return "📢";
+                case "Product Management": return "📦";
+                case "Research and Development": return "🔬";
+                case "Sales": return "💰";
+                case "Services": return "🛠️";
+                case "Support": return "📞";
+                case "Training": return "☑️";
+            }
+            return null;
         }
     }
 }

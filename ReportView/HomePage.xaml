@@ -28,16 +28,103 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition />
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            <Border BorderThickness="2" BorderBrush="LightBlue" Background="LightBlue" Opacity="0.5" Grid.ColumnSpan="3" CornerRadius="8" />
+            <Border BorderThickness="2" BorderBrush="LightBlue" Background="LightBlue" Opacity="0.5" Grid.ColumnSpan="4" CornerRadius="8" />
             <TextBlock Text="🔎" Foreground="White" Height="35" Width="35" FontSize="20" VerticalAlignment="Center" Margin="5" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" />
             <TextBox Grid.Column="1" Height="35" Background="Transparent" BorderThickness="0" FontSize="22" VerticalAlignment="Center" Margin="5" Name="textBox" TextChanged="textBox_TextChanged" />
             <Button Grid.Column="2" Background="Transparent" BorderThickness="0" materialDesign:ButtonAssist.CornerRadius="10" Click="Update_Button_Click" Margin="5">
                 <Viewbox>
-                    <materialDesign:PackIcon Kind="Update" Foreground="White" VerticalAlignment="Center"/>
+                    <materialDesign:PackIcon Kind="Update" Foreground="White" VerticalAlignment="Center" />
                 </Viewbox>
             </Button>
+            <materialDesign:PopupBox Grid.Column="3" PlacementMode="BottomAndAlignCentres" StaysOpen="True" Background="LightBlue" Foreground="White" x:Name="PopupBox" Margin="0,5,10,0">
+                <materialDesign:PopupBox.ToggleContent>
+                    <Border Background="Transparent" TextElement.Foreground="{DynamicResource PrimaryHueMidForegroundBrush}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="PlaylistAdd" Name="defaultSelectIcon"/>
+                            <TextBlock Name="selectedTextBlock"/>
+                        </StackPanel>
+                    </Border>
+                </materialDesign:PopupBox.ToggleContent>
+                <ScrollViewer MaxHeight="250" >
+                    <StackPanel Width="200">
+                        <Button Tag="Accounting" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📒" />
+                                <TextBlock Text="Accounting"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Business Development" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📊" />
+                                <TextBlock Text="Business Development" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Engineering" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="⚙" />
+                                <TextBlock Text="Engineering" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Human Resources" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="👥" />
+                                <TextBlock Text="Human Resources" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Legal" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="⚖️" />
+                                <TextBlock Text="Legal" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Marketing" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📢" />
+                                <TextBlock Text="Marketing" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Product Management" Click="Button_Click"> 
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📦" />
+                                <TextBlock Text="Product Management" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Research and Development" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🔬" />
+                                <TextBlock Text="Research and Development" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Sales" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="💰" />
+                                <TextBlock Text="Sales" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Services" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🛠️" />
+                                <TextBlock Text="Services" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Support" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📞" />
+                                <TextBlock Text="Support" />
+                            </StackPanel>
+                        </Button>
+                        <Button Tag="Training" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="☑️" />
+                                <TextBlock Text="Training" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </materialDesign:PopupBox>
         </Grid>
 
         <Border BorderThickness="2" BorderBrush="Gray" Background="LightGray" Opacity="0.2" Grid.Row="1" CornerRadius="4" />

@@ -107,6 +107,12 @@ namespace ReportView
         private void home_Click(object sender, RoutedEventArgs e)
         {
             pageViewer.Navigate(homePage);
+            try
+            {
+
+                pageViewer.RemoveBackEntry();
+            }
+            catch { }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -152,7 +158,7 @@ namespace ReportView
                 homePage.Initial_Search_Action();
                 helper.SaveLoginString("login", usernameText.Text);
             }
-            catch { MessageBox.Show("Connection Failed."); }
+            catch { }
         }
     }
 }
