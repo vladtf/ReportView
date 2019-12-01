@@ -10,48 +10,31 @@ namespace ReportView
     /// </summary>
     public partial class personViewScroll : UserControl
     {
-        //stuff we want to get from database
-        public string id { get; set; }
+        //the person select
 
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-        public string email { get; set; }
-        public string department { get; set; }
-        public string salary { get; set; }
-
-        public string hire_date { get; set; }
+        private Person person;
 
         //randomizer
 
         private Random r = new Random();
 
-        private void FullInfo(Person person)
-        {
-            this.id = person.id;
-            this.first_name = person.first_name;
-            this.last_name = person.last_name;
-            this.email = person.email;
-            this.department = person.department;
-            this.salary = person.salary;
-            this.hire_date = person.hire_date;
-        }
+        //parent MainWindows
 
         private MainWindow parent;
-        private Person person;
 
         public personViewScroll(MainWindow mainWindow, Person person)
         {
             this.parent = mainWindow;
+
             this.person = person;
 
-            FullInfo(person);
 
             InitializeComponent();
 
-            this.lastNameTextBlock.Text = this.last_name;
+            this.lastNameTextBlock.Text = this.person.last_name;
 
             personIcon.Foreground = RandomColor();
-            personIcon.Text = SetDepartmentText(department);
+            personIcon.Text = SetDepartmentText(person.department);
         }
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)

@@ -90,9 +90,6 @@
     <Compile Include="personViewScroll.xaml.cs">
       <DependentUpon>personViewScroll.xaml</DependentUpon>
     </Compile>
-    <Compile Include="popupbox.xaml.cs">
-      <DependentUpon>popupbox.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ReportPage.xaml.cs">
       <DependentUpon>ReportPage.xaml</DependentUpon>
     </Compile>
@@ -122,10 +119,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="personViewScroll.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="popupbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

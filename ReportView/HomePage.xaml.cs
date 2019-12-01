@@ -68,7 +68,7 @@ namespace ReportView
             else
                 foreach (PersonView personView in peopleView)
                 {
-                    if (Regex.IsMatch(personView.last_name.ToLower() + " ", $"{textBox.Text.ToLower()}+.")) homePageStackPanel.Children.Add(personView);
+                    if (Regex.IsMatch(personView.person.last_name.ToLower() + " ", $"{textBox.Text.ToLower()}+.")) homePageStackPanel.Children.Add(personView);
                 }
         }
 
@@ -77,7 +77,7 @@ namespace ReportView
             homePageStackPanel.Children.Clear();
                 foreach (PersonView personView in peopleView)
                 {
-                    if (personView.department==department) homePageStackPanel.Children.Add(personView);
+                    if (personView.person.department==department) homePageStackPanel.Children.Add(personView);
                 }
         }
 
