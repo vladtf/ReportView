@@ -35,13 +35,9 @@ namespace ReportView
 
         public void Initial_Search_Action()
         {
-            try
-            {
-                people.Clear();
-                peopleView.Clear();
-                homePageStackPanel.Children.Clear();
-            }
-            catch { }
+                people?.Clear();
+                peopleView?.Clear();
+                homePageStackPanel?.Children.Clear();
             try
             {
                 Search_Action();

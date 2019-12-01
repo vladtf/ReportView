@@ -106,13 +106,11 @@ namespace ReportView
 
         private void home_Click(object sender, RoutedEventArgs e)
         {
-            pageViewer.Navigate(homePage);
-            try
-            {
+            pageViewer.NavigationService.Navigate(homePage);
 
-                pageViewer.RemoveBackEntry();
-            }
-            catch { }
+
+            while (pageViewer.CanGoBack)
+                pageViewer.NavigationService.RemoveBackEntry();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
