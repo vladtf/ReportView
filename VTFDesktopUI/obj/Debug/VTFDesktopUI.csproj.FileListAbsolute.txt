@@ -22,3 +22,5 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\GeneratedInternalT
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\App.baml
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\ShellView.baml
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\VTFDesktopUI.csproj.CopyComplete
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\LoginView.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\LoginView.baml
