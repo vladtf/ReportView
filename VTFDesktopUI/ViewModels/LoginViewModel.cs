@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VTFDesktopUI.Helpers;
 
 namespace VTFDesktopUI.ViewModels
 {
@@ -11,7 +12,11 @@ namespace VTFDesktopUI.ViewModels
     {
         private string _userName;
         private string _password;
-
+        private IAPIHelper _apiHelper;
+        public LoginViewModel(IAPIHelper aPIHelper)
+        {
+            _apiHelper = aPIHelper;
+        }
         public string UserName
         {
             get { return _userName; }
@@ -48,9 +53,16 @@ namespace VTFDesktopUI.ViewModels
             }
         }
 
-        public void Login()
+        public async Task Login()
         {
-
+            try
+            {
+                var result = await _apiHelper.Authenticate(UserName, Password);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

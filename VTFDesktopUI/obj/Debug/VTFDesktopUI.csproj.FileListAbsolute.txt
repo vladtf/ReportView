@@ -24,3 +24,7 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\ShellView.ba
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\VTFDesktopUI.csproj.CopyComplete
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\LoginView.g.cs
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\LoginView.baml
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\System.Net.Http.Formatting.xml
