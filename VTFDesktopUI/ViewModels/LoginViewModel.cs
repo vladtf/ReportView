@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using VTFDesktopUI.Helpers;
 
 namespace VTFDesktopUI.ViewModels
@@ -37,6 +38,35 @@ namespace VTFDesktopUI.ViewModels
                 NotifyOfPropertyChange(() => CanLogin);
             }
         }
+        
+        public bool IsErrorVisibile
+        {
+            get 
+            {
+                bool output=false;
+                if(ErrorMessage?.Length>0)
+                {
+                    output = true;
+                }
+                return output;
+            }
+        }
+
+        private string _errorMessage;
+
+        public string ErrorMessage
+        {
+            get { return _errorMessage; }
+            set 
+            {
+
+                _errorMessage = value;
+                NotifyOfPropertyChange(() => IsErrorVisibile);
+                NotifyOfPropertyChange(() => ErrorMessage);
+            }
+        }
+
+
 
         public bool CanLogin
         {
@@ -53,15 +83,17 @@ namespace VTFDesktopUI.ViewModels
             }
         }
 
+
         public async Task Login()
         {
             try
             {
+                ErrorMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                ErrorMessage = ex.Message;
             }
         }
     }
