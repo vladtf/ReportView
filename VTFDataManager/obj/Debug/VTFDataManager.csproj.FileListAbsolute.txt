@@ -113,3 +113,7 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Debug\VTFDataManager.c
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Debug\VTFDataManager.csproj.CopyComplete
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Debug\VTFDataManager.dll
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\obj\Debug\VTFDataManager.pdb
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\bin\VTFDataManager.Library.dll
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\bin\Dapper.dll
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\bin\VTFDataManager.Library.pdb
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDataManager\bin\Dapper.xml
