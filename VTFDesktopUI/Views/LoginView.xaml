@@ -39,14 +39,14 @@
         </TextBlock>
 
         <TextBox x:Name="UserName" Grid.Row="2" Grid.Column="2" MinWidth="350" 
-                 Margin="0,0,0,10"/>
+                 Margin="0,0,0,10" Text="vladtf@vld.com"/>
         
         <!-- Password row-->
         <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,0,20">
             Password:
         </TextBlock>
         <PasswordBox x:Name="Password" Grid.Row="3" Grid.Column="2" MinWidth="100" 
-                 Margin="0,0,0,20"/>
+                 Margin="0,0,0,20" Password="Pws12345."/>
         <!-- Login row-->
         <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Padding="20 5"
                 HorizontalAlignment="Center" x:Name="Login">

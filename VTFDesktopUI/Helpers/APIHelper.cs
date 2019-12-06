@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using VTFDesktopUI.Models;
 
 namespace VTFDesktopUI.Helpers
@@ -51,5 +52,27 @@ namespace VTFDesktopUI.Helpers
                 }
             }
         }
+
+        public async void GetUserInfo(string acces_token)
+        {
+
+            apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",acces_token);
+
+            using (HttpResponseMessage response = await apiClient.GetAsync("/api/user"))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+
+                    var result = await response.Content.ReadAsAsync<IEnumerable<UserData>>();
+                    MessageBox.Show(result.First().FullInfo);
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+
     }
 }

@@ -90,6 +90,8 @@ namespace VTFDesktopUI.ViewModels
             {
                 ErrorMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
+
+                _apiHelper.GetUserInfo(result.access_token);
             }
             catch (Exception ex)
             {
