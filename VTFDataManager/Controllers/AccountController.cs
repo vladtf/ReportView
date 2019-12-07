@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using VTFDataManager.Library.DataAcces;
 using VTFDataManager.Models;
 using VTFDataManager.Providers;
 using VTFDataManager.Results;
@@ -336,6 +337,9 @@ namespace VTFDataManager.Controllers
             {
                 return GetErrorResult(result);
             }
+
+
+            UserData.RegisterUser(user.Id, user.Email);
 
             return Ok();
         }
