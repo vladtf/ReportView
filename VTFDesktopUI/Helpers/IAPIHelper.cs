@@ -7,6 +7,8 @@ namespace VTFDesktopUI.Helpers
     {
         Task<AuthenticatedUser> Authenticate(string username, string password);
 
+        Task<AuthenticatedUser> Register(string username, string password);
+
         void GetUserInfo(string acces_token);
     }
 }

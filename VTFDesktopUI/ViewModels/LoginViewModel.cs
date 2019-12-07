@@ -26,6 +26,7 @@ namespace VTFDesktopUI.ViewModels
                 _userName = value;
                 NotifyOfPropertyChange(() => UserName);
                 NotifyOfPropertyChange(() => CanLogin);
+                NotifyOfPropertyChange(() => CanRegister);
             }
         }
 
@@ -36,6 +37,7 @@ namespace VTFDesktopUI.ViewModels
                 _password = value;
                 NotifyOfPropertyChange(() => Password);
                 NotifyOfPropertyChange(() => CanLogin);
+                NotifyOfPropertyChange(() => CanRegister);
             }
         }
         
@@ -96,6 +98,39 @@ namespace VTFDesktopUI.ViewModels
             catch (Exception ex)
             {
                 ErrorMessage = ex.Message;
+            }
+        }
+
+        public bool CanRegister
+        {
+            get
+            {
+                bool output = false;
+
+                if (UserName?.Length > 0 && Password?.Length > 0)
+                {
+                    output = true;
+                }
+
+                return output;
+            }
+        }
+        public async Task Register()
+        {
+            try
+            {
+                ErrorMessage = "";
+                var result = await _apiHelper.Register(UserName, Password);
+
+
+                MessageBox.Show("Successfully Registered!");
+
+                Password = UserName = "";
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+
             }
         }
     }

@@ -73,6 +73,29 @@ namespace VTFDesktopUI.Helpers
             }
         }
 
+        public async Task<AuthenticatedUser> Register(string username, string password)
+        {
+            var data = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string,string>("Email",username),
+                new KeyValuePair<string,string>("Password",password),
+                new KeyValuePair<string,string>("ConfirmPassword",password)
+            });
+
+            using (HttpResponseMessage response = await apiClient.PostAsync("/api/Account/Register", data))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsAsync<AuthenticatedUser>();
+                    return result;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
 
     }
 }
