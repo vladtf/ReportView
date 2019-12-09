@@ -6,6 +6,6 @@
 	@phone_number int
 AS
 Begin
-	Insert into [dbo].[users] ([user_id],[first_name],[last_name],[email_adress],[phone_number],[verfied_status])
+	Insert into [dbo].[users] ([user_id],[first_name],[last_name],[email_adress],[phone_number])
 	values (@user_id,@first_name,@last_name@,@email_adress,@phone_number)
 end
