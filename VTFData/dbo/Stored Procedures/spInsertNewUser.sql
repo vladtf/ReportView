@@ -1,10 +1,11 @@
 ﻿CREATE PROCEDURE [dbo].[spInsertNewUser]
-	@Id nvarchar(128),
-	@FirstName nvarchar(128),
-	@LastName nvarchar(128),
-	@EmailAdress nvarchar(128)
+	@user_id nvarchar(128),
+	@first_name nvarchar(128),
+	@last_name@ nvarchar(128),
+	@email_adress nvarchar(128),
+	@phone_number int
 AS
 Begin
-	Insert into [dbo].[User] (Id,FirstName,LastName,EmailAdress)
-	values (@Id,@FirstName,@LastName,@EmailAdress)
+	Insert into [dbo].[users] ([user_id],[first_name],[last_name],[email_adress],[phone_number],[verfied_status])
+	values (@user_id,@first_name,@last_name@,@email_adress,@phone_number)
 end
