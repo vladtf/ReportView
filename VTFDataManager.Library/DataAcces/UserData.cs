@@ -29,6 +29,17 @@ namespace VTFDataManager.Library.DataAcces
 
             sql.SaveData("dbo.spInsertNewUser", p, "VTFData");
         }
+
+        public List<EventModel> GetEventsByMonth(EventLookupModel eventLookup)
+        {
+            SqlDataAcces sql = new SqlDataAcces();
+
+            var p = new { month = eventLookup.date, status=eventLookup.status};
+
+            var output = sql.LoadData<EventModel, dynamic>("dbo.spEventsLookup", p, "VTFData");
+
+            return output;
+        }
     }
 
 }

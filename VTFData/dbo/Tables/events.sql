@@ -6,7 +6,6 @@
   [short_description] nvarchar(255),
   [category_id] int FOREIGN KEY REFERENCES [dbo].[categories](category_id) NOT NULL,
   [date_event] datetime NOT NULL,
-  [time_event] datetime NOT NULL,
   [price] int NOT NULL,
   [seats] int NOT NULL,
   [status] nvarchar(255),
