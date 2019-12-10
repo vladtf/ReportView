@@ -75,6 +75,7 @@
     <Build Include="dbo\Tables\locations.sql" />
     <Build Include="dbo\Tables\preferences.sql" />
     <Build Include="dbo\Tables\images.sql" />
+    <Build Include="dbo\Stored Procedures\spEventsLookup.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="VTFData.refactorlog" />
