@@ -14,7 +14,7 @@ namespace VTFDataManager.Library.DataAcces
         {
             SqlDataAcces sql = new SqlDataAcces();
 
-            var p = new { Id = Id };
+            var p = new { user_id = Id };
 
             var output = sql.LoadData<UserModel, dynamic>("dbo.spUserLookup", p, "VTFData");
 

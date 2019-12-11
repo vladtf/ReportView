@@ -28,3 +28,5 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\Newtonsoft.Json.dl
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\EventsView.g.cs
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\EventsView.baml

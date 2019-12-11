@@ -8,17 +8,19 @@ namespace VTFDesktopUI.Models
 {
     public class UserData
     {
-        public string Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAdress { get; set; }
-        public string CreatedDate { get; set; }
+        public string user_id { get; set; }
+        public string first_name { get; set; }
+        public string last_name{ get; set; }
+        public string email_adress { get; set; }
+        public string phone_number { get; set; }
+        public string verfied_status { get; set; }
+        public string created_at { get; set; }
 
         public string FullInfo
         {
             get 
             { 
-                string output = $"{FirstName} {LastName} {EmailAdress} {CreatedDate}";
+                string output = $"{first_name} {last_name} {email_adress} {created_at}";
                 return output;
             }
         }

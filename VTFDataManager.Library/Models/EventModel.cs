@@ -22,6 +22,8 @@ namespace VTFDataManager.Library.Models
         public string seats { get; set; }
         public string location_name { get; set; }
         public string adress { get; set; }
+        public string host_first_name { get; set; }
+        public string host_last_name { get; set; }
 
 
 

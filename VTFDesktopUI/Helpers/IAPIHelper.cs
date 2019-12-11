@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using VTFDesktopUI.Models;
 
 namespace VTFDesktopUI.Helpers
@@ -10,5 +11,7 @@ namespace VTFDesktopUI.Helpers
         Task<AuthenticatedUser> Register(string username, string password);
 
         void GetUserInfo(string acces_token);
+
+        void GetEventsByMonth(string acces_token, string date, string status);
     }
 }

@@ -96,6 +96,31 @@ namespace VTFDesktopUI.Helpers
             }
         }
 
+        public async void GetEventsByMonth(string acces_token, string date,string status)
+        {
+
+            apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", acces_token);
+
+            var data = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string,string>("date",date.ToString()),
+                new KeyValuePair<string,string>("status",status)
+            });
+
+            using (HttpResponseMessage response = await apiClient.PostAsync("api/events/GetEventsByMonth",data))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsAsync<List<EventModel>>();
+                    MessageBox.Show(result.First().event_name);
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
 
     }
 }
