@@ -10,8 +10,8 @@ namespace VTFDesktopUI.Helpers
 
         Task<AuthenticatedUser> Register(string username, string password);
 
-        void GetUserInfo(string acces_token);
+        Task<UserModel> GetUserInfo(string acces_token);
 
-        void GetEventsByMonth(string acces_token, string date, string status);
+        Task<EventModel> GetEventsByMonth(string acces_token, string date, string status);
     }
 }

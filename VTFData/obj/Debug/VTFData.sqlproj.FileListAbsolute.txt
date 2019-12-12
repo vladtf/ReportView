@@ -3,4 +3,7 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFData\bin\Debug\VTFData.dll
 C:\Users\Skipper\Desktop\C#\ReportView\VTFData\bin\Debug\VTFData.pdb
 C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\VTFData.dll
 C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\VTFData.pdb
-C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\VTFData.sqlprojAssemblyReference.cache
+C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\Model.xml
+C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\refactor.xml
+C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\postdeploy.sql
+C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\predeploy.sql

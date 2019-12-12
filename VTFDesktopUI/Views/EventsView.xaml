@@ -24,7 +24,7 @@
 
         <StackPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Center"
-                   FontSize="25" Margin="5" x:Name="EventName">
+                   FontSize="25" Margin="5" x:Name="Event_Name">
             Event Name
             </TextBlock>
             <TextBlock HorizontalAlignment="Center"
@@ -42,7 +42,7 @@
             Category
         </TextBlock>
         <TextBlock Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"
-                   FontSize="25" Margin="5" x:Name="Location">
+                   FontSize="25" Margin="5" x:Name="Event_adress">
             Location
         </TextBlock>
 

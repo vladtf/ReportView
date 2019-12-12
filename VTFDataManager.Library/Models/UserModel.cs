@@ -16,13 +16,5 @@ namespace VTFDataManager.Library.Models
         public string verfied_status { get; set; }
         public string created_at { get; set; }
 
-        public string FullInfo
-        {
-            get
-            {
-                string output = $"{first_name} {last_name} {email_adress} {created_at}";
-                return output;
-            }
-        }
     }
 }

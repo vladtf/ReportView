@@ -1,7 +1,6 @@
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\VTFRetailManager.exe.config
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\VTFRetailManager.exe
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\VTFRetailManager.pdb
-C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\VTFDesktopUI.csprojAssemblyReference.cache
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\App.g.cs
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\VTFRetailManager_MarkupCompile.cache
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\VTFRetailManager_MarkupCompile.lref
@@ -30,3 +29,4 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\Newtonsoft.Json.xm
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\EventsView.g.cs
 C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\Views\EventsView.baml
+C:\Users\Skipper\Desktop\C#\ReportView\VTFDesktopUI\obj\Debug\VTFDesktopUI.csprojAssemblyReference.cache

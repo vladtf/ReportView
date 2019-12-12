@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using VTFDesktopUI.Helpers;
+using VTFDesktopUI.Models;
 using VTFDesktopUI.ViewModels;
 
 namespace VTFDesktopUI

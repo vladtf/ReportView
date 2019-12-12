@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using VTFDesktopUI.Helpers;
+using VTFDesktopUI.Models;
 
 namespace VTFDesktopUI.ViewModels
 {
@@ -14,6 +15,7 @@ namespace VTFDesktopUI.ViewModels
         private string _userName;
         private string _password;
         private IAPIHelper _apiHelper;
+        private UserModel _user;
         public LoginViewModel(IAPIHelper aPIHelper)
         {
             _apiHelper = aPIHelper;
@@ -92,8 +94,12 @@ namespace VTFDesktopUI.ViewModels
             {
                 ErrorMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
-                _apiHelper.GetUserInfo(result.access_token);
-                _apiHelper.GetEventsByMonth(result.access_token, "10-10-2019", "upcoming");
+                User = await _apiHelper.GetUserInfo(result.access_token);
+                User.access_token = result.access_token;
+
+                Event = await _apiHelper.GetEventsByMonth(result.access_token, "10-10-2019", "upcoming");
+
+                Console.WriteLine(Event.Name);
             }
             catch (Exception ex)
             {
@@ -133,5 +139,25 @@ namespace VTFDesktopUI.ViewModels
 
             }
         }
+
+        public UserModel User
+        {
+            get { return _user; }
+            set 
+            { 
+                _user = value;
+                NotifyOfPropertyChange(() => User);
+            }
+        }
+
+        private EventModel _event;
+
+        public EventModel Event
+        {
+            get { return _event; }
+            set { _event = value; }
+        }
+
+
     }
 }

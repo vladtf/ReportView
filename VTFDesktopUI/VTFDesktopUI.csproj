@@ -99,7 +99,7 @@
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
     <Compile Include="Models\EventModel.cs" />
-    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\Values.cs" />
     <Compile Include="ViewModels\EventsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

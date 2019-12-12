@@ -53,7 +53,7 @@ namespace VTFDesktopUI.Helpers
             }
         }
 
-        public async void GetUserInfo(string acces_token)
+        public async Task<UserModel> GetUserInfo(string acces_token)
         {
 
             apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",acces_token);
@@ -63,8 +63,10 @@ namespace VTFDesktopUI.Helpers
                 if (response.IsSuccessStatusCode)
                 {
 
-                    var result = await response.Content.ReadAsAsync<IEnumerable<UserData>>();
-                    MessageBox.Show(result.First().FullInfo);
+                    var result = await response.Content.ReadAsAsync<IEnumerable<UserModel>>();
+                    UserModel userModel = result.FirstOrDefault();
+                    userModel.loged_In = true;
+                    return userModel;
                 }
                 else
                 {
@@ -96,7 +98,7 @@ namespace VTFDesktopUI.Helpers
             }
         }
 
-        public async void GetEventsByMonth(string acces_token, string date,string status)
+        public async Task<EventModel> GetEventsByMonth(string acces_token, string date,string status)
         {
 
             apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", acces_token);
@@ -111,8 +113,9 @@ namespace VTFDesktopUI.Helpers
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadAsAsync<List<EventModel>>();
-                    MessageBox.Show(result.First().event_name);
+                    var result = await response.Content.ReadAsAsync<IEnumerable<EventModel>>();
+                    EventModel eventModel = result.FirstOrDefault();
+                    return eventModel;
                 }
                 else
                 {

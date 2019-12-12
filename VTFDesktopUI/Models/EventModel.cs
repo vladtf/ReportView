@@ -25,7 +25,7 @@ namespace VTFDesktopUI.Models
         public string host_first_name { get; set; }
         public string host_last_name { get; set; }
 
-
+        public string Name { get { return event_name; } }
 
 
         //private bool isFollowed;

@@ -32,7 +32,7 @@
         <!-- Error message row-->
         <TextBlock x:Name="ErrorMessage" Foreground="Red" Visibility="{Binding IsErrorVisibile,Converter={StaticResource BooleanToVisibilityConverter},FallbackValue=Collapsed}"
                    Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,20"
-                   TextWrapping="Wrap" MaxWidth="300"
+                   TextWrapping="Wrap" MaxWidth="300" MaxHeight="200"
                    />
         <!--User name row-->
         <TextBlock Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" >

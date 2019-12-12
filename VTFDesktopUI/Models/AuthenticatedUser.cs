@@ -10,6 +10,6 @@ namespace VTFDesktopUI.Models
     {
         public string access_token { get; set; }
         public string userName { get; set; }
-        public string token_type { get; set; }
+        public bool loged_In { get; set; }
     }
 }
