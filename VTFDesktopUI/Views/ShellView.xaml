@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VTFDesktopUI.Views"
         mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+        Title="ShellView" Height="650" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top" FontSize="18">
             <MenuItem Header="_File">
@@ -13,14 +13,13 @@
             </MenuItem>
             <MenuItem Header="_Account">
                 <MenuItem x:Name="LoginScreen" Header="_Login"/>
+                <MenuItem x:Name="RegisterScreen" Header="_Register"/>
             </MenuItem>
             <MenuItem Header="_Events" Name="Events">
-                
             </MenuItem>
         </Menu>
         <Grid>
             <ContentControl x:Name="ActiveItem" Margin="5"/>
-            
         </Grid>
     </DockPanel>
 </Window>

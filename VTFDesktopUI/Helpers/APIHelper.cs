@@ -75,13 +75,13 @@ namespace VTFDesktopUI.Helpers
             }
         }
 
-        public async Task<AuthenticatedUser> Register(string username, string password)
+        public async Task<AuthenticatedUser> Register(RegisterUserModel registerUserModel)
         {
             var data = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("Email",username),
-                new KeyValuePair<string,string>("Password",password),
-                new KeyValuePair<string,string>("ConfirmPassword",password)
+                new KeyValuePair<string,string>("Email",registerUserModel.UserName),
+                new KeyValuePair<string,string>("Password",registerUserModel.Password),
+                new KeyValuePair<string,string>("ConfirmPassword",registerUserModel.ConfirmPassword)
             });
 
             using (HttpResponseMessage response = await apiClient.PostAsync("/api/Account/Register", data))

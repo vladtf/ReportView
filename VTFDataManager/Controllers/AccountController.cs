@@ -339,7 +339,7 @@ namespace VTFDataManager.Controllers
             }
 
 
-            UserData.RegisterUser(user.Id, user.Email);
+            UserData.RegisterUser(user.Id,"unknown","unknown", user.Email,9999999);
 
             return Ok();
         }

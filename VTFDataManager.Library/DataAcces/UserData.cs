@@ -21,11 +21,11 @@ namespace VTFDataManager.Library.DataAcces
             return output;
         }
 
-        public static void RegisterUser(string Id, string EmailAdress)
+        public static void RegisterUser(string Id,string FirstName,string LastName, string EmailAdress,int PhoneNumber)
         {
             SqlDataAcces sql = new SqlDataAcces();
 
-            var p = new { Id = Id, FirstName = "", LastName = "", EmailAdress = EmailAdress };
+            var p = new { user_id = Id, first_name = FirstName, last_name = LastName, email_adress = EmailAdress,  phone_number=PhoneNumber };
 
             sql.SaveData("dbo.spInsertNewUser", p, "VTFData");
         }

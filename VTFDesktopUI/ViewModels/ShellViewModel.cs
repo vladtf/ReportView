@@ -13,7 +13,8 @@ namespace VTFDesktopUI.ViewModels
         private LoginViewModel _loginVM;
         private EventsViewModel _eventsVM;
         private UserModel _user;
-        public ShellViewModel(UserModel userModel, EventsViewModel eventsViewModel, LoginViewModel loginVM)
+        private RegisterViewModel _registerVM;
+        public ShellViewModel(UserModel userModel, EventsViewModel eventsViewModel, LoginViewModel loginVM, RegisterViewModel registerViewModel)
         {
             _user = userModel;
 
@@ -22,6 +23,8 @@ namespace VTFDesktopUI.ViewModels
             _loginVM.User = User;
 
             _eventsVM = eventsViewModel;
+
+            _registerVM = registerViewModel;
 
             ActivateItem(_loginVM);
         }
@@ -61,6 +64,11 @@ namespace VTFDesktopUI.ViewModels
         public void LoginScreen()
         {
             ActivateItem(_loginVM);
+        }
+
+        public void RegisterScreen()
+        {
+            ActivateItem(_registerVM);
         }
 
 
