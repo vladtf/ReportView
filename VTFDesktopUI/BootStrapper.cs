@@ -30,7 +30,9 @@ namespace VTFDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<IAPIHelper, APIHelper>();
+                .Singleton<IAPIHelper, APIHelper>()
+                .Singleton<EventModel, EventModel>()
+                .Singleton<UserModel, UserModel>();
 
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)

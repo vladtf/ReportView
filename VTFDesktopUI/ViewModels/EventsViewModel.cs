@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using System;
+using System.Windows;
 using VTFDesktopUI.Helpers;
 using VTFDesktopUI.Models;
 
@@ -11,8 +12,9 @@ namespace VTFDesktopUI.ViewModels
         private IAPIHelper _apiHelper;
         private EventModel _event;
 
-        public EventsViewModel(IAPIHelper aPIHelper)
+        public EventsViewModel(IAPIHelper aPIHelper,UserModel userModel)
         {
+            _user = userModel;
             _apiHelper = aPIHelper;
 
         }
@@ -20,7 +22,7 @@ namespace VTFDesktopUI.ViewModels
         public UserModel User
         {
             get { return _user; }
-            set { _user = value; }
+            set { _user.access_token = value.access_token; }
         }
 
 
@@ -30,7 +32,7 @@ namespace VTFDesktopUI.ViewModels
             set 
             { 
                 _event = value;
-
+                NotifyOfPropertyChange(() => Event);
             }
         }
 
@@ -38,6 +40,14 @@ namespace VTFDesktopUI.ViewModels
         protected override async void OnActivate()
         {
             //Event = await _apiHelper.GetEventsByMonth(_user.access_token, "10-10-2019", "upcoming");
+            try
+            {
+                Event = await _apiHelper.GetEventsByMonth(User.access_token, "10-10-2019", "upcoming");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

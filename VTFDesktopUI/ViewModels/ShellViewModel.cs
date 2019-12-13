@@ -53,11 +53,14 @@ namespace VTFDesktopUI.ViewModels
             }
         }
 
-        public async void Events()
+        public void Events()
         {
-            _eventsVM.User = _loginVM.User;
-            _eventsVM.Event = _loginVM.Event;
             ActivateItem(_eventsVM);
+        }
+
+        public void LoginScreen()
+        {
+            ActivateItem(_loginVM);
         }
 
 

@@ -16,9 +16,11 @@ namespace VTFDesktopUI.ViewModels
         private string _password;
         private IAPIHelper _apiHelper;
         private UserModel _user;
-        public LoginViewModel(IAPIHelper aPIHelper)
+        public LoginViewModel(IAPIHelper aPIHelper, EventModel eventModel,UserModel userModel)
         {
             _apiHelper = aPIHelper;
+            _event = eventModel;
+            _user = userModel;
         }
         public string UserName
         {
@@ -96,9 +98,7 @@ namespace VTFDesktopUI.ViewModels
                 var result = await _apiHelper.Authenticate(UserName, Password);
                 User = await _apiHelper.GetUserInfo(result.access_token);
                 User.access_token = result.access_token;
-
-                Event = await _apiHelper.GetEventsByMonth(result.access_token, "10-10-2019", "upcoming");
-
+                
                 Console.WriteLine(Event.Name);
             }
             catch (Exception ex)
@@ -145,7 +145,7 @@ namespace VTFDesktopUI.ViewModels
             get { return _user; }
             set 
             { 
-                _user = value;
+                _user.access_token = value.access_token;
                 NotifyOfPropertyChange(() => User);
             }
         }
@@ -155,7 +155,11 @@ namespace VTFDesktopUI.ViewModels
         public EventModel Event
         {
             get { return _event; }
-            set { _event = value; }
+            set 
+            { 
+                _event.event_name = value.event_name;
+                _event.adress= value.adress;
+            }
         }
 
 
