@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:VTFDesktopUI">
     <Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary>
-                    <local:BootStrapper x:Key="BootStrapper"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:BootStrapper x:Key="BootStrapper" />
                 </ResourceDictionary>
-        </ResourceDictionary.MergedDictionaries>
-            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

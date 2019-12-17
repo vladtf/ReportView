@@ -1,26 +1,25 @@
-﻿using System.Windows.Controls;
+﻿using ReportView.Models;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace ReportView
+namespace ReportView.Views
 {
     /// <summary>
     /// Interaction logic for PersonView.xaml
     /// </summary>
     public partial class PersonView : UserControl
     {
-        
-        private MainWindow parent;
+        private ShellView parent;
 
         //the person select
-        public Person person;
+        public PersonModel person;
 
-        public PersonView(MainWindow mainWindow, Person person)
+        public PersonView(ShellView mainWindow, PersonModel person)
         {
             this.parent = mainWindow;
 
             this.person = person;
-
 
             InitializeComponent();
 

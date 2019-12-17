@@ -1,10 +1,6 @@
 ﻿using Caliburn.Micro;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using VTFDesktopUI.Helpers;
 using VTFDesktopUI.Models;
 
@@ -16,17 +12,19 @@ namespace VTFDesktopUI.ViewModels
         private string _password;
         private IAPIHelper _apiHelper;
         private UserModel _user;
-        public LoginViewModel(IAPIHelper aPIHelper, EventModel eventModel,UserModel userModel)
+
+        public LoginViewModel(IAPIHelper aPIHelper, EventModel eventModel, UserModel userModel)
         {
             _apiHelper = aPIHelper;
             _event = eventModel;
             _user = userModel;
         }
+
         public string UserName
         {
             get { return _userName; }
-            set 
-            { 
+            set
+            {
                 _userName = value;
                 NotifyOfPropertyChange(() => UserName);
                 NotifyOfPropertyChange(() => CanLogin);
@@ -36,19 +34,20 @@ namespace VTFDesktopUI.ViewModels
         public string Password
         {
             get { return _password; }
-            set { 
+            set
+            {
                 _password = value;
                 NotifyOfPropertyChange(() => Password);
                 NotifyOfPropertyChange(() => CanLogin);
             }
         }
-        
+
         public bool IsErrorVisibile
         {
-            get 
+            get
             {
-                bool output=false;
-                if(ErrorMessage?.Length>0)
+                bool output = false;
+                if (ErrorMessage?.Length > 0)
                 {
                     output = true;
                 }
@@ -61,16 +60,13 @@ namespace VTFDesktopUI.ViewModels
         public string ErrorMessage
         {
             get { return _errorMessage; }
-            set 
+            set
             {
-
                 _errorMessage = value;
                 NotifyOfPropertyChange(() => IsErrorVisibile);
                 NotifyOfPropertyChange(() => ErrorMessage);
             }
         }
-
-
 
         public bool CanLogin
         {
@@ -87,7 +83,6 @@ namespace VTFDesktopUI.ViewModels
             }
         }
 
-
         public async Task Login()
         {
             try
@@ -96,7 +91,7 @@ namespace VTFDesktopUI.ViewModels
                 var result = await _apiHelper.Authenticate(UserName, Password);
                 User = await _apiHelper.GetUserInfo(result.access_token);
                 User.access_token = result.access_token;
-                
+
                 Console.WriteLine(Event.Name);
             }
             catch (Exception ex)
@@ -119,11 +114,12 @@ namespace VTFDesktopUI.ViewModels
                 return output;
             }
         }
+
         public UserModel User
         {
             get { return _user; }
-            set 
-            { 
+            set
+            {
                 _user.access_token = value.access_token;
                 NotifyOfPropertyChange(() => User);
             }
@@ -134,13 +130,11 @@ namespace VTFDesktopUI.ViewModels
         public EventModel Event
         {
             get { return _event; }
-            set 
-            { 
+            set
+            {
                 _event.event_name = value.event_name;
-                _event.adress= value.adress;
+                _event.adress = value.adress;
             }
         }
-
-
     }
 }

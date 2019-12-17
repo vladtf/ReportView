@@ -1,15 +1,16 @@
-﻿using System.Windows;
+﻿using ReportView.Models;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace ReportView
+namespace ReportView.Views
 {
     /// <summary>
     /// Interaction logic for ReportPage.xaml
     /// </summary>
-    public partial class ReportPage : Page
+    public partial class ReportPageView : UserControl
     {
-        private MainWindow parent;
+        private ShellView parent;
 
         //stuff we want to get from database
         public string id { get; set; }
@@ -21,7 +22,7 @@ namespace ReportView
         public string salary { get; set; }
         public string hire_date { get; set; }
 
-        private void FullInfo(Person person)
+        private void FullInfo(PersonModel person)
         {
             this.id = person.id;
             this.first_name = person.first_name;
@@ -32,7 +33,7 @@ namespace ReportView
             this.hire_date = person.hire_date;
         }
 
-        public ReportPage(MainWindow mainWindow, Person person)
+        public ReportPageView(ShellView mainWindow, PersonModel person)
         {
             parent = mainWindow;
 

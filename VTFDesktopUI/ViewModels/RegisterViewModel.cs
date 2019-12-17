@@ -1,8 +1,5 @@
 ﻿using Caliburn.Micro;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using VTFDesktopUI.Helpers;
@@ -12,8 +9,7 @@ namespace VTFDesktopUI.ViewModels
 {
     public class RegisterViewModel : Screen
     {
-
-        IAPIHelper _apiHelper;
+        private IAPIHelper _apiHelper;
         private string _username;
         private string _password;
         private string _confirmPassword;
@@ -23,18 +19,16 @@ namespace VTFDesktopUI.ViewModels
             _apiHelper = aPIHelper;
         }
 
-
         public string UserName
         {
             get { return _username; }
-            set 
+            set
             {
                 _username = value;
                 NotifyOfPropertyChange(() => UserName);
                 NotifyOfPropertyChange(() => CanRegister);
             }
         }
-
 
         public string Password
         {
@@ -51,7 +45,7 @@ namespace VTFDesktopUI.ViewModels
         public string ConfirmPassword
         {
             get { return _confirmPassword; }
-            set 
+            set
             {
                 _confirmPassword = value;
 
@@ -65,8 +59,8 @@ namespace VTFDesktopUI.ViewModels
         public string FirstName
         {
             get { return _firstName; }
-            set 
-            { 
+            set
+            {
                 _firstName = value;
 
                 NotifyOfPropertyChange(() => FirstName);
@@ -79,8 +73,8 @@ namespace VTFDesktopUI.ViewModels
         public string LastName
         {
             get { return _lastName; }
-            set 
-            { 
+            set
+            {
                 _lastName = value;
 
                 NotifyOfPropertyChange(() => LastName);
@@ -89,7 +83,7 @@ namespace VTFDesktopUI.ViewModels
         }
 
         private string _phoneNumber;
-            
+
         public string PhoneNumber
         {
             get { return _phoneNumber; }
@@ -101,9 +95,6 @@ namespace VTFDesktopUI.ViewModels
                 NotifyOfPropertyChange(() => CanRegister);
             }
         }
-
-
-
 
         public bool IsErrorVisibile
         {
@@ -125,7 +116,6 @@ namespace VTFDesktopUI.ViewModels
             get { return _errorMessage; }
             set
             {
-
                 _errorMessage = value;
                 NotifyOfPropertyChange(() => IsErrorVisibile);
                 NotifyOfPropertyChange(() => ErrorMessage);
@@ -146,6 +136,7 @@ namespace VTFDesktopUI.ViewModels
                 return output;
             }
         }
+
         public async Task Register()
         {
             try
@@ -165,12 +156,7 @@ namespace VTFDesktopUI.ViewModels
             catch (Exception ex)
             {
                 ErrorMessage = ex.Message;
-
             }
         }
-
-
-
-
     }
 }

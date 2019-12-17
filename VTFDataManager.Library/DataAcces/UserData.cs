@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using VTFDataManager.Library.Internal.DataAcces;
 using VTFDataManager.Library.Models;
 
@@ -21,11 +17,11 @@ namespace VTFDataManager.Library.DataAcces
             return output;
         }
 
-        public static void RegisterUser(string Id,string FirstName,string LastName, string EmailAdress,int PhoneNumber)
+        public static void RegisterUser(string Id, string FirstName, string LastName, string EmailAdress, int PhoneNumber)
         {
             SqlDataAcces sql = new SqlDataAcces();
 
-            var p = new { user_id = Id, first_name = FirstName, last_name = LastName, email_adress = EmailAdress,  phone_number=PhoneNumber };
+            var p = new { user_id = Id, first_name = FirstName, last_name = LastName, email_adress = EmailAdress, phone_number = PhoneNumber };
 
             sql.SaveData("dbo.spInsertNewUser", p, "VTFData");
         }
@@ -34,12 +30,11 @@ namespace VTFDataManager.Library.DataAcces
         {
             SqlDataAcces sql = new SqlDataAcces();
 
-            var p = new { month = eventLookup.date, status=eventLookup.status};
+            var p = new { month = eventLookup.date, status = eventLookup.status };
 
             var output = sql.LoadData<EventModel, dynamic>("dbo.spEventsLookup", p, "VTFData");
 
             return output;
         }
     }
-
 }

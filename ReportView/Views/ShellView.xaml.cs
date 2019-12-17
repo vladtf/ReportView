@@ -1,23 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using ReportView.Helpers;
+using ReportView.Models;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
-namespace ReportView
+
+namespace ReportView.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ShellView : Window
     {
-        private HomePage homePage;
+        private HomePageView homePage;
 
-        private List<personViewScroll> peopleViewScrolls = new List<personViewScroll>();
-        public MainWindow()
+        private List<ScrollView> peopleViewScrolls = new List<ScrollView>();
+
+        public ShellView()
         {
-            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
 
             InitializeComponent();
 
-            homePage = new HomePage(this);
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+
+
+            homePage = new HomePageView(this);
             homePage.Height = pageViewer.Height;
 
             pageViewer.Navigate(homePage);
@@ -38,7 +44,7 @@ namespace ReportView
 
         private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
-            Helper helper = new Helper();
+            ConfigHelper helper = new ConfigHelper();
             helper.SaveConnectionString("work", "");
             this.Close();
         }
@@ -62,15 +68,15 @@ namespace ReportView
             }
         }
 
-        public void RemoveChild(ReportPage reportPage)
+        public void RemoveChild(ReportPageView reportPage)
         {
             pageViewer.Content = homePage;
         }
 
-        public void NewReportPage(Person person)
+        public void NewReportPage(PersonModel person)
         {
-            ReportPage reportPage = new ReportPage(this, person);
-            personViewScroll personView = new personViewScroll(this, person);
+            ReportPageView reportPage = new ReportPageView(this, person);
+            ScrollView personView = new ScrollView(this, person);
             allOpenedPages.Children.Add(personView);
             peopleViewScrolls.Add(personView);
             reportPage.Height = pageViewer.Height;
@@ -78,15 +84,15 @@ namespace ReportView
             pageViewer.Content = reportPage;
         }
 
-        public void NewReportPageView(Person person)
+        public void NewReportPageView(PersonModel person)
         {
-            ReportPage reportPage = new ReportPage(this, person);
+            ReportPageView reportPage = new ReportPageView(this, person);
             reportPage.Height = pageViewer.Height;
             pageViewer.Content = null;
             pageViewer.Content = reportPage;
         }
 
-        public void CloseReportPage(personViewScroll personViewScroll)
+        public void CloseReportPage(ScrollView personViewScroll)
         {
             allOpenedPages.Children.Remove(personViewScroll);
             pageViewer.Content = homePage;
@@ -108,13 +114,13 @@ namespace ReportView
         {
             pageViewer.NavigationService.Navigate(homePage);
 
-
             while (pageViewer.CanGoBack)
                 pageViewer.NavigationService.RemoveBackEntry();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            serverText.Items.Add(@"SKIPPER-9TUVD5O\VLADDB");
             serverText.Items.Add("work.database.windows.net");
             serverText.Items.Add(".");
             serverText.Items.Add("(local)");
@@ -129,29 +135,29 @@ namespace ReportView
             passwordText.MaxLength = 14;
 
             //Set last login saved
-            usernameText.Text = Helper.LoginVal("login");
+            usernameText.Text = ConfigHelper.LoginVal("login");
         }
 
         private void connection_Click(object sender, RoutedEventArgs e)
         {
             Do_Login();
             PopupBox.IsPopupOpen = false;
-
         }
 
         private void passwordText_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key==Key.Enter)
-            Do_Login();
+            if (e.Key == Key.Enter)
+                Do_Login();
         }
 
         public void Do_Login()
         {
-            string connectionString = string.Format("Server=tcp:{0},1433;Initial Catalog={1};Persist Security Info=False;User ID={2};Password={3};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+            string connectionString = string.Format(@"Data Source={1};Initial Catalog=work;Integrated Security=True;Connect Timeout=30;" +
+                "Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
                 serverText.Text, databaseText.Text, usernameText.Text, passwordText.Password);
             try
             {
-                Helper helper = new Helper();
+                ConfigHelper helper = new ConfigHelper();
                 helper.SaveConnectionString("work", connectionString);
                 homePage.Initial_Search_Action();
                 helper.SaveLoginString("login", usernameText.Text);

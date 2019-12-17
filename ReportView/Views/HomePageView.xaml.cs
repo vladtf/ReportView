@@ -1,23 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using ReportView.Helpers;
+using ReportView.Models;
+using ReportView.Views;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace ReportView
-{
-    public partial class HomePage : Page
-    {
-        private List<Person> people = new List<Person>();
-        private List<PersonView> peopleView = new List<PersonView>();
-        private MainWindow parent;
+namespace ReportView.Views
 
-        public HomePage(MainWindow mainWindow)
+{
+    public partial class HomePageView : UserControl
+    {
+        private List<PersonModel> people = new List<PersonModel>();
+        private List<PersonView> peopleView = new List<PersonView>();
+        private ShellView parent;
+
+        public HomePageView(ShellView mainWindow)
         {
             this.parent = mainWindow;
             InitializeComponent();
-
         }
 
         private void Search_Action()
@@ -26,7 +29,7 @@ namespace ReportView
 
             people = db.GetPeople();
 
-            foreach (Person person in people)
+            foreach (PersonModel person in people)
             {
                 PersonView personView = new PersonView(parent, person);
                 peopleView.Add(personView);
@@ -35,9 +38,9 @@ namespace ReportView
 
         public void Initial_Search_Action()
         {
-                people?.Clear();
-                peopleView?.Clear();
-                homePageStackPanel?.Children.Clear();
+            people?.Clear();
+            peopleView?.Clear();
+            homePageStackPanel?.Children.Clear();
             try
             {
                 Search_Action();
@@ -49,7 +52,7 @@ namespace ReportView
 
                 parent.connectionStatus.Foreground = new SolidColorBrush(Colors.Green); parent.connectionICON.Foreground = new SolidColorBrush(Colors.Transparent);
             }
-            catch {parent.connectionStatus.Foreground = new SolidColorBrush(Colors.Red); parent.connectionICON.Foreground = new SolidColorBrush(Colors.Red); }
+            catch { parent.connectionStatus.Foreground = new SolidColorBrush(Colors.Red); parent.connectionICON.Foreground = new SolidColorBrush(Colors.Red); }
         }
 
         private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -71,12 +74,11 @@ namespace ReportView
         private void Display_Selected_Department(string department)
         {
             homePageStackPanel.Children.Clear();
-                foreach (PersonView personView in peopleView)
-                {
-                    if (personView.person.department==department) homePageStackPanel.Children.Add(personView);
-                }
+            foreach (PersonView personView in peopleView)
+            {
+                if (personView.person.department == department) homePageStackPanel.Children.Add(personView);
+            }
         }
-
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -93,8 +95,6 @@ namespace ReportView
             Button button = (Button)sender;
             PopupBox.IsPopupOpen = false;
             Display_Selected_Department(button.Tag.ToString());
-
-
         }
     }
 }

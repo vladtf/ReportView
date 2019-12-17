@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using VTFDataManager.Library.DataAcces;
 using VTFDataManager.Library.Models;
@@ -17,7 +13,6 @@ namespace VTFDataManager.Controllers
         [HttpPost]
         public List<EventModel> GetEventsByMonth(EventLookupModel eventLookup)
         {
-
             UserData data = new UserData();
 
             return data.GetEventsByMonth(eventLookup);

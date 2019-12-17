@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using VTFDataManager.Library.DataAcces;
 using VTFDataManager.Library.Models;
@@ -13,7 +10,6 @@ namespace VTFDataManager.Controllers
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
-
         public List<UserModel> GetById()
         {
             string userId = RequestContext.Principal.Identity.GetUserId();
@@ -22,6 +18,5 @@ namespace VTFDataManager.Controllers
 
             return data.GetUserById(userId);
         }
-
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VTFDataManager.Library.Models
+﻿namespace VTFDataManager.Library.Models
 {
     public class UserModel
     {
@@ -15,6 +9,5 @@ namespace VTFDataManager.Library.Models
         public string phone_number { get; set; }
         public string verfied_status { get; set; }
         public string created_at { get; set; }
-
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using VTFDesktopUI.Models;
 
 namespace VTFDesktopUI.ViewModels
@@ -14,6 +9,7 @@ namespace VTFDesktopUI.ViewModels
         private EventsViewModel _eventsVM;
         private UserModel _user;
         private RegisterViewModel _registerVM;
+
         public ShellViewModel(UserModel userModel, EventsViewModel eventsViewModel, LoginViewModel loginVM, RegisterViewModel registerViewModel)
         {
             _user = userModel;
@@ -29,24 +25,23 @@ namespace VTFDesktopUI.ViewModels
             ActivateItem(_loginVM);
         }
 
-
         public UserModel User
         {
             get { return _user; }
-            set 
-            { 
+            set
+            {
                 _user = value;
                 NotifyOfPropertyChange(() => User);
                 NotifyOfPropertyChange(() => _loginVM.User);
             }
         }
-        
+
         public bool LogedIn
         {
             get
             {
                 bool outpup = false;
-                if(User.loged_In)
+                if (User.loged_In)
                 {
                     outpup = true;
                     _eventsVM.User = User;
@@ -70,10 +65,5 @@ namespace VTFDesktopUI.ViewModels
         {
             ActivateItem(_registerVM);
         }
-
-
-
-
-
     }
 }

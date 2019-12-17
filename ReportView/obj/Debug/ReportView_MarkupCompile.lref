@@ -1,9 +1,9 @@
 ﻿
 FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\App.xaml;;
-FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\HomePage.xaml;;
-FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\MainWindow.xaml;;
-FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\PersonView.xaml;;
-FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\personViewScroll.xaml;;
-FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\ReportPage.xaml;;
-FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\ResourceDictionary.xaml;;
+FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\Views\HomePageView.xaml;;
+FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\Views\ShellView.xaml;;
+FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\Views\PersonView.xaml;;
+FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\Views\ScrollView.xaml;;
+FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\Views\ReportPageView.xaml;;
+FC:\Users\Skipper\Desktop\C#\ReportView\ReportView\Views\ResourceDictionary.xaml;;
 

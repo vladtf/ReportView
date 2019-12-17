@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Skipper\Desktop\C#\ReportView\ReportView\App.xaml
-6800308960
+61065593980
 
-132003855367
-28-322018030
-HomePage.xaml;MainWindow.xaml;PersonView.xaml;personViewScroll.xaml;ReportPage.xaml;ResourceDictionary.xaml;
+191827654437
+134-671005511
+Views\HomePageView.xaml;Views\ShellView.xaml;Views\PersonView.xaml;Views\ScrollView.xaml;Views\ReportPageView.xaml;Views\ResourceDictionary.xaml;
 
-True
+False
 

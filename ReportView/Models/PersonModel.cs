@@ -1,6 +1,6 @@
-﻿namespace ReportView
+﻿namespace ReportView.Models
 {
-    public class Person
+    public class PersonModel
     {
         //stuff we want to get from database
         public string id { get; set; }

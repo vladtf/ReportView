@@ -9,17 +9,16 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top" FontSize="18">
             <MenuItem Header="_File">
-                
             </MenuItem>
             <MenuItem Header="_Account">
-                <MenuItem x:Name="LoginScreen" Header="_Login"/>
-                <MenuItem x:Name="RegisterScreen" Header="_Register"/>
+                <MenuItem x:Name="LoginScreen" Header="_Login" />
+                <MenuItem x:Name="RegisterScreen" Header="_Register" />
             </MenuItem>
             <MenuItem Header="_Events" Name="Events">
             </MenuItem>
         </Menu>
         <Grid>
-            <ContentControl x:Name="ActiveItem" Margin="5"/>
+            <ContentControl x:Name="ActiveItem" Margin="5" />
         </Grid>
     </DockPanel>
 </Window>

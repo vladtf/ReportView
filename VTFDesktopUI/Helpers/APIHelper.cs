@@ -4,9 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using VTFDesktopUI.Models;
 
 namespace VTFDesktopUI.Helpers
@@ -55,14 +53,12 @@ namespace VTFDesktopUI.Helpers
 
         public async Task<UserModel> GetUserInfo(string acces_token)
         {
-
-            apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",acces_token);
+            apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", acces_token);
 
             using (HttpResponseMessage response = await apiClient.GetAsync("/api/user"))
             {
                 if (response.IsSuccessStatusCode)
                 {
-
                     var result = await response.Content.ReadAsAsync<IEnumerable<UserModel>>();
                     UserModel userModel = result.FirstOrDefault();
                     userModel.loged_In = true;
@@ -98,9 +94,8 @@ namespace VTFDesktopUI.Helpers
             }
         }
 
-        public async Task<EventModel> GetEventsByMonth(string acces_token, string date,string status)
+        public async Task<EventModel> GetEventsByMonth(string acces_token, string date, string status)
         {
-
             apiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", acces_token);
 
             var data = new FormUrlEncodedContent(new[]
@@ -109,7 +104,7 @@ namespace VTFDesktopUI.Helpers
                 new KeyValuePair<string,string>("status",status)
             });
 
-            using (HttpResponseMessage response = await apiClient.PostAsync("api/events/GetEventsByMonth",data))
+            using (HttpResponseMessage response = await apiClient.PostAsync("api/events/GetEventsByMonth", data))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -123,7 +118,5 @@ namespace VTFDesktopUI.Helpers
                 }
             }
         }
-
-
     }
 }

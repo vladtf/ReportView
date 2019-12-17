@@ -10,6 +10,7 @@ namespace VTFDesktopUI.Models
         public string short_description { get; set; }
         public string category_name { get; set; }
         public string date_event { get; set; }
+
         public string time_event
         {
             get
@@ -18,6 +19,7 @@ namespace VTFDesktopUI.Models
                 return output.ToString();
             }
         }
+
         public string price { get; set; }
         public string seats { get; set; }
         public string location_name { get; set; }
@@ -26,7 +28,6 @@ namespace VTFDesktopUI.Models
         public string host_last_name { get; set; }
 
         public string Name { get { return event_name; } }
-
 
         //private bool isFollowed;
 

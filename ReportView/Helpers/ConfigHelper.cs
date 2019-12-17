@@ -1,8 +1,8 @@
 ﻿using System.Configuration;
 
-namespace ReportView
+namespace ReportView.Helpers
 {
-    public class Helper
+    public class ConfigHelper
     {
         private Configuration config;
 
@@ -12,7 +12,7 @@ namespace ReportView
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
-        public Helper()
+        public ConfigHelper()
         {
             config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
         }
@@ -30,7 +30,6 @@ namespace ReportView
 
         public void SaveLoginString(string key, string value)
         {
-
             config.AppSettings.Settings[key].Value = value;
 
             config.Save(ConfigurationSaveMode.Modified);

@@ -41,6 +41,15 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
     </Reference>
@@ -87,17 +96,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="personViewScroll.xaml.cs">
-      <DependentUpon>personViewScroll.xaml</DependentUpon>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
+    <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="ViewModels\ReportPageViewModel.cs" />
+    <Compile Include="ViewModels\ScrollViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\ScrollView.xaml.cs">
+      <DependentUpon>ScrollView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReportPage.xaml.cs">
-      <DependentUpon>ReportPage.xaml</DependentUpon>
+    <Compile Include="Views\ReportPageView.xaml.cs">
+      <DependentUpon>ReportPageView.xaml</DependentUpon>
     </Compile>
-    <Page Include="HomePage.xaml">
+    <Page Include="Views\HomePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -105,35 +120,35 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataAcces.cs" />
-    <Compile Include="Helper.cs" />
-    <Compile Include="HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
+    <Compile Include="Helpers\DataAcces.cs" />
+    <Compile Include="Helpers\ConfigHelper.cs" />
+    <Compile Include="Views\HomePageView.xaml.cs">
+      <DependentUpon>HomePageView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PersonView.xaml">
+    <Page Include="Views\PersonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="personViewScroll.xaml">
+    <Page Include="Views\ScrollView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ReportPage.xaml">
+    <Page Include="Views\ReportPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResourceDictionary.xaml">
+    <Page Include="Views\ResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="person.cs" />
-    <Compile Include="PersonView.xaml.cs">
+    <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Views\PersonView.xaml.cs">
       <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -163,14 +178,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\background.jpg" />
+    <Resource Include="Views\Resources\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\home.png" />
+    <Resource Include="Views\Resources\home.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\appIcon.ico" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

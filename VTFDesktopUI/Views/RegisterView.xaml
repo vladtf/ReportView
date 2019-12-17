@@ -52,7 +52,7 @@
         </TextBlock>
         <PasswordBox x:Name="Password" Grid.Row="3" Grid.Column="2" MinWidth="100"
                  Margin="0,0,0,20" Password="Pws12345." />
-        
+
         <!-- Confirm Password row -->
         <TextBlock Grid.Row="4" Grid.Column="1" Margin="0,0,10,20">
             Confirm Password:
@@ -69,14 +69,14 @@
 
         <!--Last name row-->
         <TextBlock Grid.Row="6" Grid.Column="1" Margin="0,0,0,10">
-            Last Name : 
+            Last Name :
         </TextBlock>
 
         <TextBox x:Name="LastName" Grid.Row="6" Grid.Column="2" MinWidth="350" Margin="0,0,0,10" />
-        
+
         <!--Phone number row-->
         <TextBlock Grid.Row="7" Grid.Column="1" Margin="0,0,0,10">
-            Phone Number: 
+            Phone Number:
         </TextBlock>
 
         <TextBox x:Name="PhoneNumber" Grid.Row="7" Grid.Column="2" MinWidth="350" Margin="0,0,0,10" />

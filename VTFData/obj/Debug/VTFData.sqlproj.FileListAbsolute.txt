@@ -7,4 +7,3 @@ C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\Model.xml
 C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\refactor.xml
 C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\postdeploy.sql
 C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\predeploy.sql
-C:\Users\Skipper\Desktop\C#\ReportView\VTFData\obj\Debug\VTFData.sqlprojAssemblyReference.cache

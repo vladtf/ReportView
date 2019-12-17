@@ -13,6 +13,7 @@ namespace VTFDesktopUI
     public class BootStrapper : BootstrapperBase
     {
         private SimpleContainer _container = new SimpleContainer();
+
         public BootStrapper()
         {
             Initialize();
@@ -41,6 +42,7 @@ namespace VTFDesktopUI
                 .ForEach(viewModelType => _container.RegisterPerRequest(
                     viewModelType, viewModelType.ToString(), viewModelType));
         }
+
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
             DisplayRootViewFor<ShellViewModel>();

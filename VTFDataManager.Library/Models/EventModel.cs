@@ -10,6 +10,7 @@ namespace VTFDataManager.Library.Models
         public string short_description { get; set; }
         public string category_name { get; set; }
         public string date_event { get; set; }
+
         public string time_event
         {
             get
@@ -18,14 +19,13 @@ namespace VTFDataManager.Library.Models
                 return output.ToString();
             }
         }
+
         public string price { get; set; }
         public string seats { get; set; }
         public string location_name { get; set; }
         public string adress { get; set; }
         public string host_first_name { get; set; }
         public string host_last_name { get; set; }
-
-
 
         //private bool isFollowed;
 

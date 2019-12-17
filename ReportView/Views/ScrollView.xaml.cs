@@ -1,18 +1,19 @@
-﻿using System;
+﻿using ReportView.Models;
+using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace ReportView
+namespace ReportView.Views
 {
     /// <summary>
     /// Interaction logic for personViewScroll.xaml
     /// </summary>
-    public partial class personViewScroll : UserControl
+    public partial class ScrollView : UserControl
     {
         //the person select
 
-        private Person person;
+        private PersonModel person;
 
         //randomizer
 
@@ -20,14 +21,13 @@ namespace ReportView
 
         //parent MainWindows
 
-        private MainWindow parent;
+        private ShellView parent;
 
-        public personViewScroll(MainWindow mainWindow, Person person)
+        public ScrollView(ShellView mainWindow, PersonModel person)
         {
             this.parent = mainWindow;
 
             this.person = person;
-
 
             InitializeComponent();
 
@@ -69,7 +69,7 @@ namespace ReportView
 
         private Brush RandomColor()
         {
-            Brush brush = new SolidColorBrush(Color.FromRgb((byte)r.Next(1, 255),(byte)r.Next(1, 255), (byte)r.Next(1, 233)));
+            Brush brush = new SolidColorBrush(Color.FromRgb((byte)r.Next(1, 255), (byte)r.Next(1, 255), (byte)r.Next(1, 233)));
             return brush;
         }
 
