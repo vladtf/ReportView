@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTFDesktopUI", "VTFDesktopU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTFDataManager.Library", "VTFDataManager.Library\VTFDataManager.Library.csproj", "{F01D8274-FC33-4240-90B5-433A0345B272}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseData", "DatabaseData", "{8A4E3BA0-EAB9-4A5E-B092-ADBE03FAEBC3}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\Employees.csv = ..\..\..\Downloads\Employees.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

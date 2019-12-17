@@ -2,6 +2,7 @@
 using ReportView.Models;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace ReportView.Helpers
@@ -12,7 +13,9 @@ namespace ReportView.Helpers
         public List<PersonModel> GetPeople()
         {
             //create a new CONNECTION and destroy it after closing {}
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(ConfigHelper.CnnVal("work")))
+
+            //using (SqlConnection connection = new SqlConnection(ConfigHelper.CnnVal("work")))
+            using (SqlConnection connection = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = work; Integrated Security = True; Connect Timeout = 60; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
             {
                 //sql statemnt to select data
                 //var output = connection.Query<Person>($"Select * from sakila.actor where last_name = '{lastName}'").ToList();
