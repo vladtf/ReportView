@@ -1,6 +1,7 @@
 ﻿using ReportView.Helpers;
 using ReportView.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -138,19 +139,19 @@ namespace ReportView.Views
             usernameText.Text = ConfigHelper.LoginVal("login");
         }
 
-        private void connection_Click(object sender, RoutedEventArgs e)
+        private async void connection_Click(object sender, RoutedEventArgs e)
         {
-            Do_Login();
+            await Do_Login();
             PopupBox.IsPopupOpen = false;
         }
 
-        private void passwordText_KeyDown(object sender, KeyEventArgs e)
+        private async void passwordText_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
-                Do_Login();
+                await Do_Login();
         }
 
-        public void Do_Login()
+        public async Task Do_Login()
         {
             string connectionString = string.Format(@"Data Source={1};Initial Catalog=work;Integrated Security=True;Connect Timeout=30;" +
                 "Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
@@ -159,7 +160,7 @@ namespace ReportView.Views
             {
                 ConfigHelper helper = new ConfigHelper();
                 helper.SaveConnectionString("work", connectionString);
-                homePage.Initial_Search_Action();
+                await homePage.Initial_Search_Action();
                 helper.SaveLoginString("login", usernameText.Text);
             }
             catch { }

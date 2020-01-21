@@ -3,6 +3,7 @@ using ReportView.Models;
 using ReportView.Views;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -23,27 +24,28 @@ namespace ReportView.Views
             InitializeComponent();
         }
 
-        private void Search_Action()
+        private async Task Search_Action()
         {
-            DataAcces db = new DataAcces();
 
-            people = db.GetPeople();
+            people = await DataAcces.GetPeople() as List<PersonModel>;
+
+            //people = db.GetPeople();
 
             foreach (PersonModel person in people)
             {
                 PersonView personView = new PersonView(parent, person);
-                peopleView.Add(personView);
+                //peopleView.Add(personView);
             }
         }
 
-        public void Initial_Search_Action()
+        public async Task Initial_Search_Action()
         {
             people?.Clear();
             peopleView?.Clear();
             homePageStackPanel?.Children.Clear();
             try
             {
-                Search_Action();
+                await Search_Action();
 
                 foreach (PersonView personView in peopleView)
                 {
@@ -85,9 +87,9 @@ namespace ReportView.Views
             Display_Selected();
         }
 
-        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        private async void Update_Button_Click(object sender, RoutedEventArgs e)
         {
-            parent.Do_Login();
+            await parent.Do_Login();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
