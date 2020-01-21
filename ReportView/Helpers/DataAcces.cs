@@ -26,7 +26,7 @@ namespace ReportView.Helpers
                 try
                 {
                     var output = await connection.QueryAsync<PersonModel>("select * from [dbo].[employees];");
-                    return output;
+                    return output as List<PersonModel>;
                 }
                 catch
                 {

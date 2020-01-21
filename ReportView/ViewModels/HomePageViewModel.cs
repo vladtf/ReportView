@@ -13,6 +13,40 @@ namespace ReportView.ViewModels
     {
         public HomePageViewModel()
         {
+            People = new BindableCollection<PersonModel>();
+
+            #region Add people to list
+            //People.Add(new PersonModel()
+            //{
+            //    department = "Department",
+            //    email = "test@test.com",
+            //    first_name = "First",
+            //    last_name = "Second",
+            //    id = "1",
+            //    salary = "3555"
+            //});
+            //People.Add(new PersonModel()
+            //{
+            //    department = "Department",
+            //    email = "test@test.com",
+            //    first_name = "asd",
+            //    last_name = "Secdgasgond",
+            //    id = "1",
+            //    salary = "3555"
+            //});
+            //People.Add(new PersonModel()
+            //{
+            //    department = "Department",
+            //    email = "test@test.com",
+            //    first_name = "asdf",
+            //    last_name = "asdf",
+            //    id = "1",
+            //    salary = "3555"
+            //});
+
+            #endregion
+
+
         }
 
 
@@ -26,7 +60,14 @@ namespace ReportView.ViewModels
 
         public async Task SearchPeople()
         {
-            People = await DataAcces.GetPeople() as BindableCollection<PersonModel>;
+            var items = await DataAcces.GetPeople();
+
+            foreach (var item in items)
+            {
+                People.Add(item);
+            }
+
+            Console.WriteLine("Done conversion");
         }
 
     }
