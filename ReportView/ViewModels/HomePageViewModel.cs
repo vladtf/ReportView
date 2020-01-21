@@ -46,6 +46,7 @@ namespace ReportView.ViewModels
 
             #endregion
 
+            SearchPeople();
 
         }
 

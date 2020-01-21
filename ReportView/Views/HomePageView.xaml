@@ -146,10 +146,13 @@
         
         <StackPanel Name="homePageStackPanel" CanVerticallyScroll="True" Visibility="Hidden"/>
 
-        <ScrollViewer Grid.Row="1" Style="{StaticResource LeftScrollViewer}" Margin="5">
-            <ListView ItemsSource="{Binding People}" DisplayMemberPath="FullInfo">
-            </ListView>
-        </ScrollViewer>
+        <ListView Grid.Row="1" Margin="5" ItemsSource="{Binding People}">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <local:UserControlView/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         
         <!-- 
         -->

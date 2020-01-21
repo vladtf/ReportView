@@ -105,6 +105,9 @@
     <Compile Include="Views\ReportPageView.xaml.cs">
       <DependentUpon>ReportPageView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControlView.xaml.cs">
+      <DependentUpon>UserControlView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\HomePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControlView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,7 +190,9 @@
   <ItemGroup>
     <Resource Include="Resources\appIcon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\OldViews\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

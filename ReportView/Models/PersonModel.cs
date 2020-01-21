@@ -17,7 +17,7 @@
         {
             get
             {
-                return $"{ first_name } { last_name } ({id})";
+                return $"{ first_name } { last_name }";
             }
         }
     }
