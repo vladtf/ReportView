@@ -30,6 +30,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- Search bar row -->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
@@ -146,15 +147,31 @@
         
         <StackPanel Name="homePageStackPanel" CanVerticallyScroll="True" Visibility="Hidden"/>
 
-        <ListView Grid.Row="1" Margin="5" ItemsSource="{Binding People}">
-            <ListView.ItemTemplate>
-                <DataTemplate >
-                    <local:UserControlView/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <ScrollViewer Grid.Row="1" Style="{StaticResource LeftScrollViewer}">
+            <ItemsControl ItemsSource="{Binding People}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightGray" Opacity="0.2" Grid.ColumnSpan="3"/>
+
+                            <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0"/>
+
+                            <TextBlock Text="{Binding FullInfo}" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" />
+
+                            <TextBlock Text="➣" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" />
+
+                            <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Margin="2"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
         
-        <!-- 
-        -->
     </Grid>
 </UserControl>
