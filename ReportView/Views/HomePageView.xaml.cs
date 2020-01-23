@@ -98,5 +98,24 @@ namespace ReportView.Views
             PopupBox.IsPopupOpen = false;
             Display_Selected_Department(button.Tag.ToString());
         }
+
+        private void Border_MouseLeave(object sender, MouseEventArgs e)
+        {
+           // var border = (Border)sender;
+
+            //var background = border.Background;
+
+            
+            //background.Color;
+        }
+
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            //var border = (Border)sender;
+
+            //var background = border.Background as SolidColorBrush;
+
+            //background.Color = Colors.Red;
+        }
     }
 }

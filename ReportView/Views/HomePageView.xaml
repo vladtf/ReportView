@@ -14,6 +14,47 @@
         <vm:HomePageViewModel/>
     </UserControl.DataContext>
 
+    <UserControl.Resources>
+        <DataTemplate x:Key="PeopleListTemplate">
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Grid.ColumnSpan="3" Margin="5" 
+                    MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
+                <Border.Background>
+                    <SolidColorBrush Color="LightGray" Opacity="0.2"/>
+                </Border.Background>
+                <Border.Triggers>
+                </Border.Triggers>
+                <Border.Child>
+                    <Grid Margin="5">
+                        <Grid.Children>
+
+                            <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0"/>
+
+                            <TextBlock Text="{Binding FullInfo}" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" />
+
+                            <TextBlock Text="➣" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" />
+
+                            <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Margin="2"/>
+                        </Grid.Children>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                            </Style>
+                        </Grid.Style>
+                    </Grid>
+                </Border.Child>
+            </Border>
+            
+        </DataTemplate>
+
+        <DataTemplate x:Key="PeopleListView">
+            <local:UserControlView/>
+        </DataTemplate>
+    </UserControl.Resources>
+
     <Grid Margin="75" Name="homeStackPanel">
 
         <Grid.Resources>
@@ -148,29 +189,7 @@
         <StackPanel Name="homePageStackPanel" CanVerticallyScroll="True" Visibility="Hidden"/>
 
         <ScrollViewer Grid.Row="1" Style="{StaticResource LeftScrollViewer}">
-            <ItemsControl ItemsSource="{Binding People}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Margin="5">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightGray" Opacity="0.2" Grid.ColumnSpan="3"/>
-
-                            <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0"/>
-
-                            <TextBlock Text="{Binding FullInfo}" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" />
-
-                            <TextBlock Text="➣" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" />
-
-                            <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Margin="2"/>
-                        </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <ItemsControl ItemsSource="{Binding People}" ItemTemplate="{StaticResource ResourceKey=PeopleListView}"/>
         </ScrollViewer>
         
     </Grid>
