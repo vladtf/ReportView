@@ -20,12 +20,9 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="{Binding department,Converter={StaticResource DepartmentIconConverter}}" Visibility="Hidden" Name="DepartmentText"/>
-
-
         <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="LightGray" Opacity="0.2" Grid.ColumnSpan="3" Name="backgroundBorder" />
 
-        <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0" Name="departmentTextBlock" />
+        <TextBlock Text="{Binding department,Converter={StaticResource DepartmentConverter}}" Height="35" Width="35" FontSize="20" Margin="5,0,0,0"/>
 
         <TextBlock Text="{Binding FullInfo}" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" Name="lastNameTextBlock"/>
 
