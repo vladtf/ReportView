@@ -100,6 +100,7 @@
     <Compile Include="ViewModels\ReportPageViewModel.cs" />
     <Compile Include="ViewModels\ScrollViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\UserControlViewModel.cs" />
     <Compile Include="Views\ScrollView.xaml.cs">
       <DependentUpon>ScrollView.xaml</DependentUpon>
     </Compile>

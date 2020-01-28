@@ -1,6 +1,5 @@
 ﻿using ReportView.Helpers;
 using ReportView.Models;
-using ReportView.Views;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -26,7 +25,6 @@ namespace ReportView.Views
 
         private async Task Search_Action()
         {
-
             people = await DataAcces.GetPeople() as List<PersonModel>;
 
             //people = db.GetPeople();
@@ -101,11 +99,10 @@ namespace ReportView.Views
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
         {
-           // var border = (Border)sender;
+            // var border = (Border)sender;
 
             //var background = border.Background;
 
-            
             //background.Color;
         }
 

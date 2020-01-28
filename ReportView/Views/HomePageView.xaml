@@ -11,47 +11,48 @@
       Name="HomePage" Height="600">
 
     <UserControl.DataContext>
-        <vm:HomePageViewModel/>
+        <vm:HomePageViewModel />
     </UserControl.DataContext>
 
     <UserControl.Resources>
         <DataTemplate x:Key="PeopleListTemplate">
-            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Grid.ColumnSpan="3" Margin="5" 
-                    MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave">
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Grid.ColumnSpan="3" Margin="5">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.5" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
                 <Border.Background>
-                    <SolidColorBrush Color="LightGray" Opacity="0.2"/>
+                    <SolidColorBrush Color="LightGray" Opacity="0.4" />
                 </Border.Background>
-                <Border.Triggers>
-                </Border.Triggers>
                 <Border.Child>
                     <Grid Margin="5">
                         <Grid.Children>
 
-                            <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0"/>
+                            <TextBlock Text="👤" Height="35" Width="35" FontSize="20" Margin="5,0,0,0" />
 
                             <TextBlock Text="{Binding FullInfo}" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" />
 
                             <TextBlock Text="➣" FontSize="25" Width="35" Height="35" Margin="4,0,5,0" Grid.Column="2" TextAlignment="Center" />
 
-                            <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Margin="2"/>
+                            <Border Grid.Column="3" CornerRadius="8" Background="Transparent" Opacity="0.2" Margin="2" />
                         </Grid.Children>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
-                        <Grid.Style>
-                            <Style TargetType="Grid">
-                            </Style>
-                        </Grid.Style>
                     </Grid>
                 </Border.Child>
             </Border>
-            
         </DataTemplate>
 
         <DataTemplate x:Key="PeopleListView">
-            <local:UserControlView/>
+            <local:UserControlView cm:Message.Attach="[Event MouseDouwn] = [Action SelectedPerson]" />
         </DataTemplate>
     </UserControl.Resources>
 
@@ -79,17 +80,17 @@
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            
+
             <Border BorderThickness="2" BorderBrush="LightBlue" Background="LightBlue" Opacity="0.5" Grid.ColumnSpan="4" CornerRadius="8" />
-            
+
             <TextBlock Text="🔎" Foreground="White" Background="Transparent"
-                       Height="35" Width="35" FontSize="20" VerticalAlignment="Center" 
+                       Height="35" Width="35" FontSize="20" VerticalAlignment="Center"
                        Margin="5" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" />
-            <TextBox Grid.Column="1" Height="35" Background="Transparent" BorderThickness="0" 
-                     FontSize="22" VerticalAlignment="Center" Margin="5" 
+            <TextBox Grid.Column="1" Height="35" Background="Transparent" BorderThickness="0"
+                     FontSize="22" VerticalAlignment="Center" Margin="5"
                      Name="textBox" TextChanged="textBox_TextChanged" />
-            
-            <Button Grid.Column="2" Background="Transparent" BorderThickness="0" 
+
+            <Button Grid.Column="2" Background="Transparent" BorderThickness="0"
                     materialDesign:ButtonAssist.CornerRadius="10" Click="Update_Button_Click" Margin="5"
                     cm:Message.Attach="SearchPeople">
                 <Viewbox>
@@ -183,14 +184,12 @@
                 </ScrollViewer>
             </materialDesign:PopupBox>
         </Grid>
-
         <Border BorderThickness="2" BorderBrush="Gray" Background="LightGray" Opacity="0.2" Grid.Row="1" CornerRadius="4" />
-        
-        <StackPanel Name="homePageStackPanel" CanVerticallyScroll="True" Visibility="Hidden"/>
+
+        <StackPanel Name="homePageStackPanel" CanVerticallyScroll="True" Visibility="Hidden" />
 
         <ScrollViewer Grid.Row="1" Style="{StaticResource LeftScrollViewer}">
-            <ItemsControl ItemsSource="{Binding People}" ItemTemplate="{StaticResource ResourceKey=PeopleListView}"/>
+            <ItemsControl ItemsSource="{Binding People}" ItemTemplate="{StaticResource ResourceKey=PeopleListTemplate}" />
         </ScrollViewer>
-        
     </Grid>
 </UserControl>

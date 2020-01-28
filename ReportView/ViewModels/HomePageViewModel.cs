@@ -2,20 +2,21 @@
 using ReportView.Helpers;
 using ReportView.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ReportView.ViewModels
 {
     public class HomePageViewModel : Screen
     {
+        private BindableCollection<PersonModel> _people;
+
         public HomePageViewModel()
         {
             People = new BindableCollection<PersonModel>();
 
             #region Add people to list
+
             //People.Add(new PersonModel()
             //{
             //    department = "Department",
@@ -44,14 +45,10 @@ namespace ReportView.ViewModels
             //    salary = "3555"
             //});
 
-            #endregion
+            #endregion Add people to list
 
             SearchPeople();
-
         }
-
-
-        private BindableCollection<PersonModel> _people;
 
         public BindableCollection<PersonModel> People
         {
@@ -71,5 +68,9 @@ namespace ReportView.ViewModels
             Console.WriteLine("Done conversion");
         }
 
+        public void SelectedPerson()
+        {
+            MessageBox.Show("Person Selected");
+        }
     }
 }

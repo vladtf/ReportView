@@ -18,11 +18,9 @@ namespace ReportView.Views
 
         public ShellView()
         {
-
             InitializeComponent();
 
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-
 
             homePage = new HomePageView(this);
             homePage.Height = pageViewer.Height;

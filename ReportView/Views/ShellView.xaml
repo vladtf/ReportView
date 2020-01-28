@@ -59,7 +59,7 @@
 
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignCentres" StaysOpen="True" Background="LightBlue" Foreground="White" x:Name="PopupBox" Margin="0,5,10,0">
                     <materialDesign:PopupBox.ToggleContent>
-                        <Border Background="Transparent" >
+                        <Border Background="Transparent">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="ErrorOutline"  Margin="10,0,5,0" Foreground="Red" VerticalAlignment="Center" Name="connectionICON" />
                                 <TextBlock Text="Connection" FontSize="15" VerticalAlignment="Center" />

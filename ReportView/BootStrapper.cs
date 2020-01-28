@@ -1,7 +1,6 @@
 ﻿using Caliburn.Micro;
 using ReportView.Models;
 using ReportView.ViewModels;
-using ReportView.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -32,7 +31,8 @@ namespace ReportView
                 .Singleton<PersonViewModel>()
                 .Singleton<ReportPageViewModel>()
                 .Singleton<ScrollViewModel>()
-                .Singleton<PersonModel>();
+                .Singleton<PersonModel>()
+                .PerRequest<UserControlViewModel>();
         }
 
         protected override object GetInstance(Type service, string key)
