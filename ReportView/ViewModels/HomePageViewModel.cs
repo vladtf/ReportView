@@ -2,6 +2,8 @@
 using ReportView.Helpers;
 using ReportView.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -48,6 +50,7 @@ namespace ReportView.ViewModels
             #endregion Add people to list
 
             SearchPeople();
+            
         }
 
         public BindableCollection<PersonModel> People
